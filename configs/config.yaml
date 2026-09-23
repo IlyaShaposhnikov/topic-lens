@@ -1,0 +1,111 @@
+# topic-lens configuration.
+#
+# Every value can be overridden by an environment variable named
+# TOPICLENS_<SECTION>__<KEY> (double underscore separates nesting levels), e.g.
+#   TOPICLENS_MODELS__N_TOPICS=15
+#   TOPICLENS_DATA__ARXIV__MAX_PER_SLICE=100
+# Values are parsed as YAML, so "15", "true" and "[1, 2]" get their natural types.
+
+project:
+  name: topic-lens
+  seed: 12345
+  artifacts_dir: artifacts
+
+data:
+  source: arxiv            # arxiv | csv
+  raw_dir: data/raw
+  cache_dir: data/cache
+  min_abstract_chars: 250  # drop stubs that carry no topical signal
+  drop_duplicates: true
+
+  arxiv:
+    # Deliberately distant fields: the category labels are used as a reference
+    # partition when scoring how well the discovered topics match reality.
+    categories: [cs.CL, cs.CV, cs.CR, cs.RO, cs.DB]
+    date_from: "2018-01"
+    date_to: "2026-06"
+    primary_category_only: true   # ignore cross-listed papers to keep labels clean
+    max_per_slice: 400            # papers per (category, year) slice
+    api:
+      page_size: 200
+      delay_seconds: 3.0          # arXiv asks for a pause between requests
+      max_retries: 5
+      timeout_seconds: 30.0
+
+  csv:
+    text_column: text
+    label_column: null
+    date_column: null
+    id_column: null
+
+preprocessing:
+  lowercase: true
+  min_token_length: 3
+  remove_latex: true       # abstracts are full of $\alpha$-style inline math
+  remove_numbers: true
+  lemmatize: true
+  extra_stopwords:
+    - paper
+    - propose
+    - proposed
+    - approach
+    - method
+    - methods
+    - result
+    - results
+    - show
+    - shows
+    - based
+    - using
+    - used
+    - novel
+    - state
+    - art
+  vectorizer:
+    count:                 # LDA is a generative model of counts
+      max_features: 20000
+      min_df: 5
+      max_df: 0.5
+      ngram_range: [1, 1]
+    tfidf:                 # NMF and LSA work on weighted frequencies
+      max_features: 20000
+      min_df: 5
+      max_df: 0.5
+      ngram_range: [1, 2]
+      sublinear_tf: true
+
+models:
+  n_topics: 10
+  lda:
+    max_iter: 20
+    learning_method: online
+    learning_decay: 0.7
+    doc_topic_prior: null     # null -> 1 / n_topics
+    topic_word_prior: null
+  nmf:
+    beta_loss: kullback-leibler
+    solver: mu
+    max_iter: 400
+    alpha_W: 0.0
+    l1_ratio: 0.0
+  lsa:
+    algorithm: randomized
+    n_iter: 10
+    normalize: true           # SVD output is not scale-free
+
+evaluation:
+  top_words: 10
+  coherence_metrics: [npmi, umass]
+  topic_diversity_top_n: 25
+  k_search: [5, 8, 10, 12, 15, 20]
+  holdout_fraction: 0.15      # kept aside for LDA perplexity
+
+viz:
+  top_words_chart: 10
+  timeline_freq: QE           # pandas offset alias: quarter end
+  projection: pca             # pca | tsne
+
+logging:
+  level: INFO                 # level written to the log file
+  console_level: WARNING      # keep the terminal quiet during long runs
+  file: logs/topiclens.log
