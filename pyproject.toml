@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topic-lens"
+version = "0.1.0"
+description = "Comparative topic modeling toolkit: LDA, NMF and LSA side by side on a single corpus"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ilya Shaposhnikov", email = "ilia.a.shaposhnikov@gmail.com" }]
+keywords = ["nlp", "topic-modeling", "lda", "nmf", "lsa", "arxiv", "streamlit"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pyarrow>=15.0",
+    "scikit-learn>=1.4",
+    "scipy>=1.11",
+    "nltk>=3.8",
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    "plotly>=5.20",
+    "streamlit>=1.33",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+    "pre-commit>=3.7",
+]
+viz-extra = [
+    "pyLDAvis>=3.4",
+    "wordcloud>=1.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/IlyaShaposhnikov/topic-lens"
+Issues = "https://github.com/IlyaShaposhnikov/topic-lens/issues"
+
+[tool.setuptools.packages.find]
+include = ["topiclens*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RET"]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --strict-markers"
+markers = [
+    "slow: tests that fit real models and may take tens of seconds",
+    "network: tests that require network access to the arXiv API",
+]
