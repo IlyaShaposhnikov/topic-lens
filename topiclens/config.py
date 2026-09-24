@@ -57,6 +57,7 @@ class ArxivConfig(_Section):
     date_to: str
     primary_category_only: bool = True
     include_title: bool = True
+    slice_by: Literal["month", "year"] = "month"
     max_per_slice: int = Field(default=400, ge=1)
     api: ArxivApiConfig = Field(default_factory=ArxivApiConfig)
 

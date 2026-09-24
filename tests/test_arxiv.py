@@ -49,9 +49,12 @@ def make_feed(entries: list[str], total: int | None = None) -> str:
 
 
 class FakeResponse:
-    def __init__(self, text: str, status_code: int = 200) -> None:
+    def __init__(
+        self, text: str, status_code: int = 200, headers: dict[str, str] | None = None
+    ) -> None:
         self.text = text
         self.status_code = status_code
+        self.headers = headers or {}
 
     def raise_for_status(self) -> None:
         if self.status_code >= 400:
@@ -77,15 +80,20 @@ class FakeSession:
 def config() -> ArxivConfig:
     return ArxivConfig(
         categories=["cs.CL", "cs.CV"],
-        date_from="2023-03",
-        date_to="2024-08",
+        date_from="2023-11",
+        date_to="2024-02",
         max_per_slice=4,
         api={"page_size": 2, "delay_seconds": 0.0, "max_retries": 2},
     )
 
 
-def build_client(config: ArxivConfig, responses: list[FakeResponse]) -> ArxivClient:
-    return ArxivClient(config, session=FakeSession(responses), sleep=lambda _: None)
+def build_client(
+    config: ArxivConfig,
+    responses: list[FakeResponse],
+    sleeps: list[float] | None = None,
+) -> ArxivClient:
+    recorder = sleeps.append if sleeps is not None else (lambda _: None)
+    return ArxivClient(config, session=FakeSession(responses), sleep=recorder)
 
 
 # ------------------------------------------------------------------- parsing
@@ -137,25 +145,47 @@ def test_build_query_shape():
 # ------------------------------------------------------------------- slicing
 
 
-def test_slice_bounds_clip_first_and_last_year(config):
+def test_monthly_periods_span_the_range(config):
     client = build_client(config, [])
-    assert client.slice_bounds(2023) == ("202303010000", "202312312359")
-    assert client.slice_bounds(2024) == ("202401010000", "202408312359")
+    assert client.periods() == ["2023-11", "2023-12", "2024-01", "2024-02"]
 
 
-def test_slice_bounds_use_february_length(config):
-    config = config.model_copy(update={"date_to": "2024-02"})
+def test_yearly_periods_span_the_range(config):
+    config = config.model_copy(update={"slice_by": "year"})
     client = build_client(config, [])
-    assert client.slice_bounds(2024)[1] == "202402292359"
+    assert client.periods() == ["2023", "2024"]
 
 
-def test_slices_cover_categories_and_years(config):
+def test_month_bounds_cover_exactly_that_month(config):
+    client = build_client(config, [])
+    assert client.period_bounds("2023-11") == ("202311010000", "202311302359")
+
+
+def test_month_bounds_use_february_length(config):
+    client = build_client(config, [])
+    assert client.period_bounds("2024-02") == ("202402010000", "202402292359")
+
+
+def test_year_bounds_are_clipped_to_the_configured_range(config):
+    client = build_client(config, [])
+    assert client.period_bounds("2023") == ("202311010000", "202312312359")
+    assert client.period_bounds("2024") == ("202401010000", "202402292359")
+
+
+def test_malformed_period_is_rejected(config):
+    client = build_client(config, [])
+    with pytest.raises(ValueError, match="YYYY-MM"):
+        client.period_bounds("2024-13")
+
+
+def test_slices_cover_categories_and_periods(config):
+    config = config.model_copy(update={"date_to": "2023-12"})
     client = build_client(config, [])
     assert list(client.slices()) == [
-        ("cs.CL", 2023),
-        ("cs.CL", 2024),
-        ("cs.CV", 2023),
-        ("cs.CV", 2024),
+        ("cs.CL", "2023-11"),
+        ("cs.CL", "2023-12"),
+        ("cs.CV", "2023-11"),
+        ("cs.CV", "2023-12"),
     ]
 
 
@@ -168,16 +198,17 @@ def test_fetch_slice_paginates_until_target_is_reached(config):
         FakeResponse(make_feed([make_entry("3"), make_entry("4")], total=10)),
     ]
     client = build_client(config, pages)
-    papers = client.fetch_slice("cs.CL", 2024)
+    papers = client.fetch_slice("cs.CL", "2024-01")
 
     assert [paper.paper_id for paper in papers] == ["1", "2", "3", "4"]
     assert [call["start"] for call in client.session.calls] == [0, 2]
     assert client.session.calls[0]["sortBy"] == "submittedDate"
+    assert "202401010000" in client.session.calls[0]["search_query"]
 
 
 def test_fetch_slice_stops_when_results_are_exhausted(config):
     client = build_client(config, [FakeResponse(make_feed([make_entry("1")], total=1))])
-    assert len(client.fetch_slice("cs.CL", 2024)) == 1
+    assert len(client.fetch_slice("cs.CL", "2024-01")) == 1
 
 
 def test_fetch_slice_filters_cross_listed_papers(config):
@@ -185,7 +216,7 @@ def test_fetch_slice_filters_cross_listed_papers(config):
         FakeResponse(make_feed([make_entry("1"), make_entry("2", primary="cs.CV")], total=2)),
     ]
     client = build_client(config, pages)
-    papers = client.fetch_slice("cs.CL", 2024)
+    papers = client.fetch_slice("cs.CL", "2024-01")
     assert [paper.paper_id for paper in papers] == ["1"]
 
 
@@ -195,12 +226,12 @@ def test_fetch_slice_keeps_cross_listed_papers_when_configured(config):
         FakeResponse(make_feed([make_entry("1"), make_entry("2", primary="cs.CV")], total=2)),
     ]
     client = build_client(config, pages)
-    assert len(client.fetch_slice("cs.CL", 2024)) == 2
+    assert len(client.fetch_slice("cs.CL", "2024-01")) == 2
 
 
 def test_fetch_slice_respects_explicit_limit(config):
     client = build_client(config, [FakeResponse(make_feed([make_entry("1")], total=5))])
-    papers = client.fetch_slice("cs.CL", 2024, limit=1)
+    papers = client.fetch_slice("cs.CL", "2024-01", limit=1)
     assert len(papers) == 1
     assert client.session.calls[0]["max_results"] == 1
 
@@ -211,7 +242,7 @@ def test_fetch_retries_after_server_error(config):
         FakeResponse(make_feed([make_entry("1")], total=1)),
     ]
     client = build_client(config, pages)
-    assert len(client.fetch_slice("cs.CL", 2024)) == 1
+    assert len(client.fetch_slice("cs.CL", "2024-01")) == 1
     assert len(client.session.calls) == 2
 
 
@@ -221,18 +252,45 @@ def test_fetch_retries_on_empty_feed_with_pending_matches(config):
         FakeResponse(make_feed([make_entry("1")], total=5)),
     ]
     client = build_client(config, pages)
-    assert len(client.fetch_slice("cs.CL", 2024, limit=1)) == 1
+    assert len(client.fetch_slice("cs.CL", "2024-01", limit=1)) == 1
+
+
+def test_rate_limited_request_waits_the_configured_pause(config):
+    config = config.model_copy(
+        update={"api": config.api.model_copy(update={"rate_limit_pause_seconds": 45.0})}
+    )
+    pages = [
+        FakeResponse("", status_code=429),
+        FakeResponse(make_feed([make_entry("1")], total=1)),
+    ]
+    sleeps: list[float] = []
+    client = build_client(config, pages, sleeps)
+
+    assert len(client.fetch_slice("cs.CL", "2024-01")) == 1
+    assert 45.0 in sleeps
+
+
+def test_rate_limit_respects_a_longer_retry_after_header(config):
+    pages = [
+        FakeResponse("", status_code=429, headers={"Retry-After": "120"}),
+        FakeResponse(make_feed([make_entry("1")], total=1)),
+    ]
+    sleeps: list[float] = []
+    client = build_client(config, pages, sleeps)
+
+    client.fetch_slice("cs.CL", "2024-01")
+    assert 120.0 in sleeps
 
 
 def test_fetch_gives_up_after_max_retries(config):
     pages = [FakeResponse("", status_code=500) for _ in range(3)]
     client = build_client(config, pages)
     with pytest.raises(ArxivFetchError):
-        client.fetch_slice("cs.CL", 2024)
+        client.fetch_slice("cs.CL", "2024-01")
 
 
 def test_fetch_all_deduplicates_across_slices(config):
-    config = config.model_copy(update={"categories": ["cs.CL"], "date_to": "2023-12"})
+    config = config.model_copy(update={"categories": ["cs.CL"], "date_to": "2023-11"})
     pages = [FakeResponse(make_feed([make_entry("1"), make_entry("1")], total=2))]
     client = build_client(config, pages)
     assert len(client.fetch_all()) == 1
