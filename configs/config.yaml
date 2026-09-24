@@ -48,21 +48,72 @@ preprocessing:
   remove_latex: true       # abstracts are full of $\alpha$-style inline math
   remove_numbers: true
   lemmatize: true
+  # Scientific abstracts share a fixed rhetorical vocabulary. Left in, these
+  # words top every topic and make the topics indistinguishable. Substantive
+  # domain terms (data, system, network, language) are deliberately kept, even
+  # at high document frequency: that is where the topical signal lives.
   extra_stopwords:
+    # framing the contribution
     - paper
+    - work
+    - study
+    - research
     - propose
-    - proposed
+    - present
+    - introduce
+    - novel
+    - new
     - approach
     - method
-    - methods
-    - result
-    - results
+    - technique
+    - framework
+    - contribution
+    # claims and evaluation
     - show
-    - shows
-    - based
-    - using
-    - used
-    - novel
+    - demonstrate
+    - achieve
+    - provide
+    - result
+    - performance
+    - improve
+    - outperform
+    - evaluate
+    - evaluation
+    - experiment
+    - compare
+    - baseline
+    - accuracy  # confirm after comparing coherence of models with and without this word
+    - state-of-the-art
+    - task
+    - dataset
+    - benchmark
+    - challenge
+    # generic verbs and quantifiers
+    - use
+    - base
+    - make
+    - enable
+    - require
+    - include
+    - exist
+    - address
+    - perform
+    - obtain
+    - set
+    - one
+    - two
+    - three
+    - first
+    - second
+    - different
+    - various
+    - multiple
+    - several
+    - available
+    - however
+    - also
+    - across
+    - without
     - state
     - art
   vectorizer:
