@@ -25,6 +25,7 @@ data:
     date_from: "2018-01"
     date_to: "2026-06"
     primary_category_only: true   # ignore cross-listed papers to keep labels clean
+    include_title: true           # titles are dense and improve coherence
     max_per_slice: 400            # papers per (category, year) slice
     api:
       page_size: 200
@@ -33,6 +34,7 @@ data:
       timeout_seconds: 30.0
 
   csv:
+    path: null                    # set to use a local CSV instead of the API
     text_column: text
     label_column: null
     date_column: null

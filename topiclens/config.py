@@ -56,6 +56,7 @@ class ArxivConfig(_Section):
     date_from: str
     date_to: str
     primary_category_only: bool = True
+    include_title: bool = True
     max_per_slice: int = Field(default=400, ge=1)
     api: ArxivApiConfig = Field(default_factory=ArxivApiConfig)
 
@@ -81,6 +82,7 @@ class ArxivConfig(_Section):
 
 
 class CsvConfig(_Section):
+    path: Path | None = None
     text_column: str = "text"
     label_column: str | None = None
     date_column: str | None = None
