@@ -136,13 +136,13 @@ class ArxivSource:
 
         records: list[dict[str, Any]] = []
         for category, period in iterator:
-            for paper in self.client.fetch_slice(category, period):
-                if cached is not None:
-                    records.extend(cached)
-                    continue
-                fetched = self._slice_records(category, period)
-                self._append_checkpoint(category, period, fetched)
-                records.extend(fetched)
+            cached = done.get((category, period))
+            if cached is not None:
+                records.extend(cached)
+                continue
+            fetched = self._slice_records(category, period)
+            self._append_checkpoint(category, period, fetched)
+            records.extend(fetched)
 
         return pd.DataFrame.from_records(records)
 

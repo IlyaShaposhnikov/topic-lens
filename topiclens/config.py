@@ -49,6 +49,7 @@ class ArxivApiConfig(_Section):
     delay_seconds: float = Field(default=3.0, ge=0.0)
     max_retries: int = Field(default=5, ge=0)
     timeout_seconds: float = Field(default=30.0, gt=0.0)
+    rate_limit_pause_seconds: float = Field(default=60.0, ge=0.0)
 
 
 class ArxivConfig(_Section):

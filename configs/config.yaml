@@ -26,12 +26,14 @@ data:
     date_to: "2026-06"
     primary_category_only: true   # ignore cross-listed papers to keep labels clean
     include_title: true           # titles are dense and improve coherence
-    max_per_slice: 400            # papers per (category, year) slice
+    slice_by: month               # year-sized slices + date sorting = only January
+    max_per_slice: 40             # per (category, month) -> ~20k papers, evenly spread
     api:
       page_size: 200
       delay_seconds: 3.0          # arXiv asks for a pause between requests
       max_retries: 5
       timeout_seconds: 30.0
+      rate_limit_pause_seconds: 60.0   # HTTP 429 needs minutes, not seconds
 
   csv:
     path: null                    # set to use a local CSV instead of the API
