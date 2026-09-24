@@ -96,9 +96,7 @@ def test_env_override_replaces_scalar():
 
 
 def test_env_override_reaches_nested_keys():
-    raw = apply_env_overrides(
-        MINIMAL_CONFIG, {"TOPICLENS_DATA__ARXIV__MAX_PER_SLICE": "50"}
-    )
+    raw = apply_env_overrides(MINIMAL_CONFIG, {"TOPICLENS_DATA__ARXIV__MAX_PER_SLICE": "50"})
     assert AppConfig.model_validate(raw).data.arxiv.max_per_slice == 50
 
 

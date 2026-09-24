@@ -89,7 +89,7 @@ models:
     alpha_W: 0.0
     l1_ratio: 0.0
   lsa:
-    algorithm: randomized
+    algorithm: randomized     # randomized | arpack
     n_iter: 10
     normalize: true           # SVD output is not scale-free
 
