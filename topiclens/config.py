@@ -150,6 +150,8 @@ class LdaConfig(_Section):
     learning_decay: float = Field(default=0.7, gt=0.5, le=1.0)
     doc_topic_prior: float | None = Field(default=None, gt=0.0)
     topic_word_prior: float | None = Field(default=None, gt=0.0)
+    evaluate_every: int = Field(default=-1, ge=-1)
+    perplexity_tol: float = Field(default=0.1, gt=0.0)
 
 
 class NmfConfig(_Section):

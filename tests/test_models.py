@@ -195,6 +195,14 @@ def test_nmf_reports_reconstruction_error(config, weights):
     assert info["reconstruction_error"] >= 0
 
 
+def test_nmf_init_matches_the_solver(config):
+    assert build_model("nmf", config).estimator.init == "nndsvda"
+    cd_config = config.model_copy(
+        update={"nmf": config.nmf.model_copy(update={"beta_loss": "frobenius", "solver": "cd"})}
+    )
+    assert build_model("nmf", cd_config).estimator.init == "nndsvd"
+
+
 def test_lsa_reports_explained_variance(config, weights):
     ratio = fitted(build_model("lsa", config), weights).fit_info()["explained_variance_ratio"]
     assert 0.0 < ratio <= 1.0
@@ -219,3 +227,12 @@ def test_lsa_normalization_can_be_disabled(config, weights):
     model = fitted(build_model("lsa", config), weights)
     norms = np.linalg.norm(model.transform(matrix), axis=1)
     assert not np.allclose(norms, 1.0)
+
+
+def test_lda_convergence_settings_reach_the_estimator(config):
+    tuned = config.model_copy(
+        update={"lda": config.lda.model_copy(update={"evaluate_every": 5, "perplexity_tol": 0.5})}
+    )
+    estimator = build_model("lda", tuned).estimator
+    assert estimator.evaluate_every == 5
+    assert estimator.perp_tol == 0.5

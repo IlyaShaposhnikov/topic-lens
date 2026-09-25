@@ -30,12 +30,16 @@ class LdaModel(TopicModel):
         learning_decay: float = 0.7,
         doc_topic_prior: float | None = None,
         topic_word_prior: float | None = None,
+        evaluate_every: int = -1,
+        perplexity_tol: float = 0.1,
     ) -> None:
         self.max_iter = max_iter
         self.learning_method = learning_method
         self.learning_decay = learning_decay
         self.doc_topic_prior = doc_topic_prior
         self.topic_word_prior = topic_word_prior
+        self.evaluate_every = evaluate_every
+        self.perplexity_tol = perplexity_tol
         super().__init__(n_topics, seed=seed)
 
     def _build_estimator(self) -> Any:
@@ -46,6 +50,8 @@ class LdaModel(TopicModel):
             learning_decay=self.learning_decay,
             doc_topic_prior=self.doc_topic_prior,
             topic_word_prior=self.topic_word_prior,
+            evaluate_every=self.evaluate_every,
+            perp_tol=self.perplexity_tol,
             random_state=self.seed,
         )
 
@@ -55,5 +61,15 @@ class LdaModel(TopicModel):
         return float(self.estimator.perplexity(matrix))
 
     def fit_info(self) -> dict[str, float]:
+        """Iterations used, plus whether the fit stopped early.
+
+        ``converged`` is only meaningful when ``evaluate_every`` is positive:
+        otherwise scikit-learn never evaluates the bound and always runs the
+        full ``max_iter`` passes.
+        """
         self._require_fitted()
-        return {"n_iter": float(self.estimator.n_iter_)}
+        iterations = float(self.estimator.n_iter_)
+        return {
+            "n_iter": iterations,
+            "converged": float(self.evaluate_every > 0 and iterations < self.max_iter),
+        }

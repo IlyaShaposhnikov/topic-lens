@@ -66,8 +66,8 @@ class TopicModel(abc.ABC):
             raise ValueError(f"n_topics must be at least 2, got {n_topics}")
         self.n_topics = n_topics
         self.seed = seed
-        self.estimator = self._build_estimator()
         self.feature_names_: np.ndarray | None = None
+        self.estimator = self._build_estimator()
 
     def __repr__(self) -> str:
         state = "fitted" if self.is_fitted else "unfitted"

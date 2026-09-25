@@ -39,6 +39,9 @@ class NmfModel(TopicModel):
         super().__init__(n_topics, seed=seed)
 
     def _build_estimator(self) -> Any:
+        # 'mu' cannot update zeros left by 'nndsvd', which silently cripples
+        # part of the factorization; 'nndsvda' fills them with the matrix mean.
+        init = "nndsvda" if self.solver == "mu" else "nndsvd"
         return NMF(
             n_components=self.n_topics,
             beta_loss=self.beta_loss,
@@ -46,7 +49,7 @@ class NmfModel(TopicModel):
             max_iter=self.max_iter,
             alpha_W=self.alpha_W,
             l1_ratio=self.l1_ratio,
-            init="nndsvd",
+            init=init,
             random_state=self.seed,
         )
 

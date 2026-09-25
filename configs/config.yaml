@@ -121,7 +121,7 @@ preprocessing:
       max_features: 20000
       min_df: 5
       max_df: 0.5
-      ngram_range: [1, 1]
+      ngram_range: [1, 2]
     tfidf:                 # NMF and LSA work on weighted frequencies
       max_features: 20000
       min_df: 5
@@ -132,11 +132,13 @@ preprocessing:
 models:
   n_topics: 10
   lda:
-    max_iter: 20
+    max_iter: 50
     learning_method: online
     learning_decay: 0.7
     doc_topic_prior: null     # null -> 1 / n_topics
     topic_word_prior: null
+    evaluate_every: 10        # without this LDA never checks convergence
+    perplexity_tol: 0.1
   nmf:
     beta_loss: kullback-leibler
     solver: mu
