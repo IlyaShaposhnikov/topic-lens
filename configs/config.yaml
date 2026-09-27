@@ -130,7 +130,7 @@ preprocessing:
       sublinear_tf: true
 
 models:
-  n_topics: 10
+  n_topics: 8
   lda:
     max_iter: 50
     learning_method: online
@@ -159,7 +159,7 @@ evaluation:
 
 viz:
   top_words_chart: 10
-  timeline_freq: QE           # pandas offset alias: quarter end
+  timeline_freq: Q            # pandas period alias: M, Q or Y
   projection: pca             # pca | tsne
 
 logging:
