@@ -118,7 +118,7 @@ preprocessing:
     - art
   vectorizer:
     count:                 # LDA is a generative model of counts
-      max_features: 20000
+      max_features: 20000  # the full 1-2gram vocabulary is ~56k; the tail is noise
       min_df: 5
       max_df: 0.5
       ngram_range: [1, 2]
