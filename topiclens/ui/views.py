@@ -31,6 +31,11 @@ MODEL_NOTES = {
     "lsa": "Truncated SVD. Finds directions of variance, which is not the same as topics.",
 }
 
+#: Fixed decimals keep a column of numbers legible: trailing zeros are dropped
+#: by default, and ragged decimals read as if the precision itself varied.
+WEIGHT_FORMAT = st.column_config.NumberColumn("weight", format="%.4f")
+SIMILARITY_FORMAT = st.column_config.NumberColumn("similarity", format="%.3f")
+
 
 def render_topics_tab(bundle: ModelBundle, reports: ReportData) -> None:
     """Browse the topics of one model."""
@@ -55,7 +60,11 @@ def render_topics_tab(bundle: ModelBundle, reports: ReportData) -> None:
     with left:
         st.plotly_chart(topic_words_chart(model, topic_index), width="stretch")
     with right:
-        st.dataframe(topic_words_table(model, topic_index), hide_index=True)
+        st.dataframe(
+            topic_words_table(model, topic_index),
+            hide_index=True,
+            column_config={"weight": WEIGHT_FORMAT},
+        )
 
     with st.expander("All topics of this model"):
         st.dataframe(
@@ -70,7 +79,9 @@ def render_topics_tab(bundle: ModelBundle, reports: ReportData) -> None:
             columns, ("npmi", "diversity", "purity", "fit_seconds"), strict=False
         ):
             if key in scores:
-                column.metric(key, f"{scores[key]:.3f}")
+                suffix = " s" if key == "fit_seconds" else ""
+                precision = 1 if key == "fit_seconds" else 3
+                column.metric(key, f"{scores[key]:.{precision}f}{suffix}")
 
 
 def render_comparison_tab(bundle: ModelBundle, reports: ReportData) -> None:
@@ -81,10 +92,23 @@ def render_comparison_tab(bundle: ModelBundle, reports: ReportData) -> None:
         return
 
     st.plotly_chart(metrics_comparison_chart(reports.metrics), width="stretch")
+    metrics_table = pd.DataFrame(reports.metrics).T.rename_axis("model").reset_index()
     st.dataframe(
-        pd.DataFrame(reports.metrics).T.rename_axis("model").reset_index(),
+        metrics_table,
         hide_index=True,
         width="stretch",
+        column_config={
+            column: st.column_config.NumberColumn(column, format="%.3f")
+            for column in metrics_table.columns
+            if column not in {"model", "fit_seconds", "holdout_perplexity", "n_iter"}
+        }
+        | {
+            "fit_seconds": st.column_config.NumberColumn("fit_seconds", format="%.1f s"),
+            "holdout_perplexity": st.column_config.NumberColumn(
+                "holdout_perplexity", format="%.0f"
+            ),
+            "n_iter": st.column_config.NumberColumn("n_iter", format="%d"),
+        },
     )
     st.caption(
         "Purity of about 0.20 is what random assignment gives on five balanced "
@@ -109,6 +133,7 @@ def render_comparison_tab(bundle: ModelBundle, reports: ReportData) -> None:
             table[["label_a", "label_b", "similarity", "shared_words"]],
             hide_index=True,
             width="stretch",
+            column_config={"similarity": SIMILARITY_FORMAT},
         )
 
     if reports.sweep is not None and not reports.sweep.empty:
@@ -186,6 +211,10 @@ def render_text_tab(
             table[["title", "category", "date", "similarity"]],
             hide_index=True,
             width="stretch",
+            column_config={
+                "date": st.column_config.DateColumn("date", format="YYYY-MM-DD"),
+                "similarity": SIMILARITY_FORMAT,
+            },
         )
 
 
