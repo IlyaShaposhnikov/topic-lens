@@ -12,6 +12,8 @@ from topiclens.evaluation.selection import SweepRow
 from topiclens.pipeline import train
 from topiclens.reporting import matches_frame, timeline_frame, write_report, write_sweep
 
+pytestmark = pytest.mark.slow
+
 LANGUAGE = "language model translation corpus text sentence word embedding"
 ROBOTICS = "robot motion planning control navigation sensor trajectory autonomous"
 

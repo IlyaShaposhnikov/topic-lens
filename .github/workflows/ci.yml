@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Weekly, so a new advisory in a dependency surfaces without anyone pushing.
+    - cron: "0 6 * * 1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      # Only the linter is installed here: a formatting mistake should fail in
+      # seconds, not after scikit-learn has been pulled three times over.
+      - run: python -m pip install ruff==0.16.8
+      - run: ruff check .
+      - run: ruff format --check .
+
+  test:
+    name: Tests on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Cache NLTK corpora
+        uses: actions/cache@v4
+        with:
+          path: ~/nltk_data
+          key: nltk-${{ hashFiles('topiclens/utils/nltk_data.py') }}
+
+      - run: python -m pip install -e ".[dev]"
+      - run: python scripts/setup_nltk.py
+
+      - name: Run tests
+        # Pull requests get the fast set; main runs everything, including the
+        # tests that fit real models.
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            pytest -m "not slow" --cov=topiclens --cov-report=term-missing --cov-report=xml
+          else
+            pytest --cov=topiclens --cov-report=term-missing --cov-report=xml
+          fi
+
+      - name: Upload coverage
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage.xml
+          retention-days: 14
+
+  audit:
+    name: Dependency audit
+    # Kept off pull requests: a fresh advisory in a transitive dependency should
+    # not block an unrelated change, and the weekly run catches it anyway.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - run: python -m pip install pip-audit
+      - run: pip-audit --requirement requirements.txt --strict

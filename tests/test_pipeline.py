@@ -10,6 +10,8 @@ from topiclens.artifacts import ARTIFACT_VERSION, ArtifactError, ModelBundle
 from topiclens.config import AppConfig
 from topiclens.pipeline import cross_model_similarity, split_holdout, topic_timeline, train
 
+pytestmark = pytest.mark.slow
+
 LANGUAGE = "language model translation corpus text sentence word embedding"
 ROBOTICS = "robot motion planning control navigation sensor trajectory autonomous"
 

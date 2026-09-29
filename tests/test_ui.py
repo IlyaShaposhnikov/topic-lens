@@ -28,6 +28,8 @@ from topiclens.ui.data import (
     topic_words_table,
 )
 
+pytestmark = pytest.mark.slow
+
 LANGUAGE = "language model translation corpus text sentence word embedding"
 ROBOTICS = "robot motion planning control navigation sensor trajectory autonomous"
 
