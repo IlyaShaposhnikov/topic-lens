@@ -27,6 +27,8 @@ Most topic-modeling projects fit one model and print ten word lists. This one fi
 
 Full corpus, 8 topics per model, identical preprocessing, seed fixed.
 
+![Model comparison](docs/images/metrics.png)
+
 | | LDA | NMF | LSA |
 |---|---|---|---|
 | **NPMI coherence** ↑ | 0.112 | **0.196** | 0.118 |
@@ -42,7 +44,11 @@ Full corpus, 8 topics per model, identical preprocessing, seed fixed.
 
 **LSA is not a topic model, and the numbers say so plainly.** Purity of 0.253 sits barely above the 0.20 that random assignment gives on five balanced categories, and ARI of 0.004 means no agreement at all once chance is discounted. Its first component is not a topic but "the average scientific abstract" — the direction of greatest variance, which is what SVD is designed to find. It is kept in the comparison precisely because this failure is informative, and it earns its place in the app as a **similarity search** engine, which is what the method is genuinely good at.
 
-**Two models out of three agree with each other.** Mean similarity of optimally matched topics: LDA↔NMF **0.680**, LSA↔NMF 0.388, LDA↔LSA 0.314. LDA and NMF independently found the same computer-vision topic (cosine 0.91, eight shared words out of ten) and the same robotics topic (0.89), despite being fitted on different matrices with different objectives.
+**Two models out of three agree with each other.** Mean similarity of optimally matched topics: LDA↔NMF **0.680**, LSA↔NMF 0.388, LDA↔LSA 0.314.
+
+![Topic similarity between LDA and NMF](docs/images/similarity-lda-nmf.png)
+
+LDA and NMF independently found the same computer-vision topic (cosine 0.91, eight shared words out of ten) and the same robotics topic (0.89), despite being fitted on different matrices with different objectives.
 
 ## The topics move
 
@@ -59,6 +65,12 @@ Verified independently of the models, by counting abstracts that mention LLMs at
 | 0.0% | 0.0% | 0.2% | 0.3% | 1.2% | 8.9% | 22.4% | 28.1% | 31.0% |
 
 The curve matches what the model found without being told anything about LLMs.
+
+![Topic map](docs/images/topic-map.png)
+
+All 24 topics of the three models, projected together so that distances are comparable across models. LDA (blue) and NMF (orange) topics interleave — they found the same structure. LSA (green) sits apart, and its first component is the large dot: a quarter of the corpus assigned to what amounts to "the average scientific abstract".
+
+![Topic similarity between LDA and NMF](docs/images/similarity-lda-nmf.png)
 
 ## What the experiments showed
 

@@ -18,7 +18,8 @@ arXiv metadata is available for reuse; the project follows the API's usage rules
 | Period | January 2018 – June 2026 (102 months) |
 | Quota | 40 papers per category per month |
 | Cross-listed papers | excluded; only the primary category counts |
-| Documents | 20,169 (of a 20,400 quota) |
+| Collected | 20,186 (of a 20,400 quota) |
+| Documents after filtering | 20,169 |
 | Median per month | 200, range 184–200 |
 | Mean length | 1,292 characters |
 
@@ -45,6 +46,7 @@ Applied once, in `finalize_corpus`:
 - whitespace normalized, empty documents dropped;
 - abstracts shorter than 250 characters dropped as uninformative;
 - duplicates removed twice over — by identifier, and by identical text, since papers withdrawn and resubmitted under a new number carry byte-identical abstracts. On this corpus the check found none, which is itself worth knowing: it means the identifier deduplication in the fetch layer already did the job.
+The quota shortfall — 214 papers — comes almost entirely from `cs.DB` in the early years, where the category does not publish 40 papers in some months. Filtering then removed 17 abstracts shorter than 250 characters and, notably, **no duplicates at all**: identifier deduplication in the fetch layer had already caught everything.
 
 ## Sampling, and what it biases
 

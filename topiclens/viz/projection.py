@@ -90,7 +90,12 @@ def project(matrix: np.ndarray, method: ProjectionMethod = "pca", seed: int = 0)
         distances = np.clip(1.0 - normalized @ normalized.T, 0.0, None)
         np.fill_diagonal(distances, 0.0)
         return MDS(
-            n_components=2, dissimilarity="precomputed", random_state=seed, normalized_stress=False
+            n_components=2,
+            metric="precomputed",
+            init="classical_mds",
+            n_init=1,
+            random_state=seed,
+            normalized_stress=False,
         ).fit_transform(distances)
     raise ValueError(f"unknown projection method {method!r}; expected 'pca' or 'mds'")
 
