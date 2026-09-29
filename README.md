@@ -11,7 +11,7 @@
 
 Most topic-modeling projects fit one model and print ten word lists. This one fits three, measures them against each other, matches their topics pairwise, and tracks how the topics move over eight years of arXiv abstracts.
 
-**[Live demo](https://topic-lens.streamlit.app/)** · built from 20,169 abstracts across five arXiv categories, January 2018 – June 2026.
+**[Live demo](https://topic-lens.streamlit.app/)** — running on a 2,487-abstract stratified sample, so its metrics are lower than the ones below. The full corpus is 20,169 abstracts across five arXiv categories, January 2018 – June 2026.
 
 ## What it answers
 
