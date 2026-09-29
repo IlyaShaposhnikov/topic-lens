@@ -33,7 +33,7 @@ DEMO_ARTIFACTS = PROJECT_ROOT / "artifacts" / "demo"
 DEMO_CORPUS = PROJECT_ROOT / "data" / "demo" / "arxiv-demo.csv.gz"
 FULL_CORPUS_PATTERN = str(PROJECT_ROOT / "data" / "cache" / "arxiv-*.parquet")
 
-st.set_page_config(page_title="topic-lens", page_icon="🔭", layout="wide")
+st.set_page_config(page_title="TopicLens", page_icon="🔭", layout="wide")
 
 
 def default_artifacts_directory() -> tuple[str, bool]:
@@ -75,7 +75,7 @@ def get_corpus_vectors(directory: str, prefer_demo: bool):
 
 
 def main() -> None:
-    st.title("topic-lens")
+    st.title("TopicLens")
     st.caption(
         "Three topic models — LDA, NMF and LSA — fitted on the same corpus of arXiv "
         "abstracts and compared on coherence, diversity and agreement with the real "

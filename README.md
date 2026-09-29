@@ -50,6 +50,16 @@ Full corpus, 8 topics per model, identical preprocessing, seed fixed.
 
 LDA and NMF independently found the same computer-vision topic (cosine 0.91, eight shared words out of ten) and the same robotics topic (0.89), despite being fitted on different matrices with different objectives.
 
+![Topic map](docs/images/topic-map.png)
+
+All 24 topics of the three models, projected together so that distances are comparable across models. LDA (blue) and NMF (orange) topics interleave — they found the same structure. LSA (green) sits apart, and its first component is the large dot: a quarter of the corpus assigned to what amounts to "the average scientific abstract".
+
+### What a topic looks like
+
+![Top words of the largest NMF topic](docs/images/topic-words-nmf.png)
+
+A topic is a weighted list of words; the label used throughout the app and the reports is simply its three leading ones.
+
 ## The topics move
 
 ![Topic shares over time](docs/images/timeline-nmf.png)
@@ -65,12 +75,6 @@ Verified independently of the models, by counting abstracts that mention LLMs at
 | 0.0% | 0.0% | 0.2% | 0.3% | 1.2% | 8.9% | 22.4% | 28.1% | 31.0% |
 
 The curve matches what the model found without being told anything about LLMs.
-
-![Topic map](docs/images/topic-map.png)
-
-All 24 topics of the three models, projected together so that distances are comparable across models. LDA (blue) and NMF (orange) topics interleave — they found the same structure. LSA (green) sits apart, and its first component is the large dot: a quarter of the corpus assigned to what amounts to "the average scientific abstract".
-
-![Topic similarity between LDA and NMF](docs/images/similarity-lda-nmf.png)
 
 ## What the experiments showed
 
