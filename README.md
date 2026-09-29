@@ -70,7 +70,7 @@ Every parameter below was chosen by measurement, and the measurements are as int
 
 **Domain stopwords were chosen by looking at the data.** Scientific abstracts share a fixed rhetorical vocabulary — *propose*, *demonstrate*, *state-of-the-art*, *outperform* — which would otherwise top every topic. They were selected from a document-frequency ranking, while substantive terms were deliberately kept even at high frequency: `data` appears in 41% of abstracts and is exactly what the database topic is made of.
 
-**LDA never reaches its convergence threshold**, stopping at the iteration limit. Note that scikit-learn evaluates convergence only when `evaluate_every` is positive — left at its default, `n_iter_` always equals `max_iter` and tells you nothing.
+**Converging LDA properly is not worth it.** Left at 50 iterations it stops on the limit; raised to 200 it converges at iteration 169 — and gains 0.006 NPMI, which is less than the 0.010 spread across random seeds, for 2.8× the fit time (797 s against 286 s). The limit stays at 50. Note also that scikit-learn evaluates convergence only when `evaluate_every` is positive — left at its default, `n_iter_` always equals `max_iter` and tells you nothing.
 
 ## Two bugs worth mentioning
 

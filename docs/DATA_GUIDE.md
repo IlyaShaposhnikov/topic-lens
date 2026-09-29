@@ -44,7 +44,7 @@ Applied once, in `finalize_corpus`:
 
 - whitespace normalized, empty documents dropped;
 - abstracts shorter than 250 characters dropped as uninformative;
-- duplicates removed twice over — by identifier, and by identical text, because papers withdrawn and resubmitted under a new number appear with byte-identical abstracts.
+- duplicates removed twice over — by identifier, and by identical text, since papers withdrawn and resubmitted under a new number carry byte-identical abstracts. On this corpus the check found none, which is itself worth knowing: it means the identifier deduplication in the fetch layer already did the job.
 
 ## Sampling, and what it biases
 
