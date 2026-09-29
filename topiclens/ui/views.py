@@ -179,15 +179,24 @@ def render_text_tab(
         "models were trained with, so this is what the models would have seen."
     )
 
-    text = st.text_area(
-        "Paste an abstract",
-        height=160,
-        placeholder="We propose a retrieval-augmented approach to question answering over...",
-    )
-    if not text.strip():
+    with st.form("analyze_text_form"):
+        text = st.text_area(
+            "Paste an abstract",
+            height=160,
+            placeholder="We propose a retrieval-augmented approach to question answering over...",
+        )
+        # A submit button rather than Ctrl+Enter: the hosted demo is opened on
+        # phones, where that shortcut does not exist.
+        submitted = st.form_submit_button("Analyze", type="primary")
+
+    if submitted and text.strip():
+        st.session_state["analyzed_text"] = text
+
+    analyzed = st.session_state.get("analyzed_text", "")
+    if not analyzed:
         return
 
-    shares = bundle.transform_text(text)
+    shares = bundle.transform_text(analyzed)
     columns = st.columns(len(shares))
     for column, (model_key, values) in zip(columns, sorted(shares.items()), strict=True):
         with column:
@@ -205,7 +214,7 @@ def render_text_tab(
     if corpus is not None and corpus_vectors is not None:
         st.markdown("#### Closest papers in the corpus")
         st.caption("Nearest neighbours in the LSA space — what truncated SVD is actually good at.")
-        table = similar_documents(bundle, corpus, corpus_vectors, text)
+        table = similar_documents(bundle, corpus, corpus_vectors, analyzed)
         table["category"] = table["label"].map(lambda key: ARXIV_CATEGORY_NAMES.get(key, key))
         st.dataframe(
             table[["title", "category", "date", "similarity"]],
