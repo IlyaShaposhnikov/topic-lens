@@ -105,7 +105,7 @@ def write_report(
     }
     metrics_path = target / METRICS_JSON
     metrics_path.write_text(
-        json.dumps(summary, indent=2, sort_keys=True, default=str), encoding="utf-8"
+        json.dumps(summary, indent=2, sort_keys=True, default=str) + "\n", encoding="utf-8"
     )
     written["metrics_json"] = metrics_path
 

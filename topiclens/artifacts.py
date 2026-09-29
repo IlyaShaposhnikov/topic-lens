@@ -92,7 +92,7 @@ class ModelBundle:
             "corpus_fingerprint": self.corpus_fingerprint,
         }
         (target / MANIFEST_FILENAME).write_text(
-            json.dumps(manifest, indent=2, sort_keys=True, default=str), encoding="utf-8"
+            json.dumps(manifest, indent=2, sort_keys=True, default=str) + "\n", encoding="utf-8"
         )
 
         logger.info("Saved bundle to %s (%.1f MB)", bundle_path, bundle_path.stat().st_size / 1e6)

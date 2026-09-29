@@ -218,7 +218,9 @@ __marimo__/
 .streamlit/secrets.toml
 
 # project artifacts
-/data/
-/artifacts/
+/data/*
+!/data/demo/
+/artifacts/*
+!/artifacts/demo/
 /logs/
 .venv/

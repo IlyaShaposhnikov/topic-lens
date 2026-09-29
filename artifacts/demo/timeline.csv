@@ -1,0 +1,817 @@
+model,period,topic,share,label
+lda,2018-01-01,1,0.08573986598899166,1. learn · train · data
+lda,2018-04-01,1,0.06895465023100344,1. learn · train · data
+lda,2018-07-01,1,0.07409314822186794,1. learn · train · data
+lda,2018-10-01,1,0.11201372484001738,1. learn · train · data
+lda,2019-01-01,1,0.10036577207060465,1. learn · train · data
+lda,2019-04-01,1,0.06905263069238687,1. learn · train · data
+lda,2019-07-01,1,0.08177362664248088,1. learn · train · data
+lda,2019-10-01,1,0.04554972508866312,1. learn · train · data
+lda,2020-01-01,1,0.06375308838822516,1. learn · train · data
+lda,2020-04-01,1,0.07222209051958055,1. learn · train · data
+lda,2020-07-01,1,0.08933578920645088,1. learn · train · data
+lda,2020-10-01,1,0.039896127504429106,1. learn · train · data
+lda,2021-01-01,1,0.09104066308609751,1. learn · train · data
+lda,2021-04-01,1,0.06062992310479951,1. learn · train · data
+lda,2021-07-01,1,0.08023290035525195,1. learn · train · data
+lda,2021-10-01,1,0.06770006788431111,1. learn · train · data
+lda,2022-01-01,1,0.0955001490167791,1. learn · train · data
+lda,2022-04-01,1,0.07675187730355029,1. learn · train · data
+lda,2022-07-01,1,0.07039917273713657,1. learn · train · data
+lda,2022-10-01,1,0.06739608338439958,1. learn · train · data
+lda,2023-01-01,1,0.08200241570304868,1. learn · train · data
+lda,2023-04-01,1,0.06618713860120937,1. learn · train · data
+lda,2023-07-01,1,0.0467137266314417,1. learn · train · data
+lda,2023-10-01,1,0.04553501912941925,1. learn · train · data
+lda,2024-01-01,1,0.05628206197674146,1. learn · train · data
+lda,2024-04-01,1,0.0284362321442735,1. learn · train · data
+lda,2024-07-01,1,0.03612019785439844,1. learn · train · data
+lda,2024-10-01,1,0.03414993012585375,1. learn · train · data
+lda,2025-01-01,1,0.030038837149202174,1. learn · train · data
+lda,2025-04-01,1,0.03728477421630454,1. learn · train · data
+lda,2025-07-01,1,0.04516201033819529,1. learn · train · data
+lda,2025-10-01,1,0.035147012329604,1. learn · train · data
+lda,2026-01-01,1,0.0660378419126026,1. learn · train · data
+lda,2026-04-01,1,0.04736866535134776,1. learn · train · data
+lda,2018-01-01,2,0.09768417707093785,2. network · image · segmentation
+lda,2018-04-01,2,0.10877815549526147,2. network · image · segmentation
+lda,2018-07-01,2,0.0719071344712365,2. network · image · segmentation
+lda,2018-10-01,2,0.09953138560720737,2. network · image · segmentation
+lda,2019-01-01,2,0.10583088909195545,2. network · image · segmentation
+lda,2019-04-01,2,0.08356469945815058,2. network · image · segmentation
+lda,2019-07-01,2,0.0733132760158612,2. network · image · segmentation
+lda,2019-10-01,2,0.0737661056946183,2. network · image · segmentation
+lda,2020-01-01,2,0.09406774195344024,2. network · image · segmentation
+lda,2020-04-01,2,0.06816832209331537,2. network · image · segmentation
+lda,2020-07-01,2,0.08834311737386537,2. network · image · segmentation
+lda,2020-10-01,2,0.08161874522646682,2. network · image · segmentation
+lda,2021-01-01,2,0.07097555187929609,2. network · image · segmentation
+lda,2021-04-01,2,0.0811543854842767,2. network · image · segmentation
+lda,2021-07-01,2,0.08996337521235102,2. network · image · segmentation
+lda,2021-10-01,2,0.07143293232068933,2. network · image · segmentation
+lda,2022-01-01,2,0.06342870925833811,2. network · image · segmentation
+lda,2022-04-01,2,0.06033357221098585,2. network · image · segmentation
+lda,2022-07-01,2,0.07021485705831056,2. network · image · segmentation
+lda,2022-10-01,2,0.06681941196355201,2. network · image · segmentation
+lda,2023-01-01,2,0.055983482009785195,2. network · image · segmentation
+lda,2023-04-01,2,0.06942713999482229,2. network · image · segmentation
+lda,2023-07-01,2,0.08190044182982595,2. network · image · segmentation
+lda,2023-10-01,2,0.04320125202460201,2. network · image · segmentation
+lda,2024-01-01,2,0.056899389179191746,2. network · image · segmentation
+lda,2024-04-01,2,0.07081497259706168,2. network · image · segmentation
+lda,2024-07-01,2,0.05328100711360619,2. network · image · segmentation
+lda,2024-10-01,2,0.07877276729763687,2. network · image · segmentation
+lda,2025-01-01,2,0.05243962042756967,2. network · image · segmentation
+lda,2025-04-01,2,0.06266144850436565,2. network · image · segmentation
+lda,2025-07-01,2,0.05219401709710508,2. network · image · segmentation
+lda,2025-10-01,2,0.07549429574200614,2. network · image · segmentation
+lda,2026-01-01,2,0.0800878597434371,2. network · image · segmentation
+lda,2026-04-01,2,0.03985899262372331,2. network · image · segmentation
+lda,2018-01-01,3,0.06589155305147847,3. language · llm · language model
+lda,2018-04-01,3,0.07697689128926974,3. language · llm · language model
+lda,2018-07-01,3,0.07381207639990138,3. language · llm · language model
+lda,2018-10-01,3,0.059232422274034774,3. language · llm · language model
+lda,2019-01-01,3,0.07246154609792826,3. language · llm · language model
+lda,2019-04-01,3,0.07280179899067268,3. language · llm · language model
+lda,2019-07-01,3,0.07874377318605064,3. language · llm · language model
+lda,2019-10-01,3,0.0948430913362303,3. language · llm · language model
+lda,2020-01-01,3,0.06204172771613481,3. language · llm · language model
+lda,2020-04-01,3,0.10157992668572532,3. language · llm · language model
+lda,2020-07-01,3,0.06975725698976354,3. language · llm · language model
+lda,2020-10-01,3,0.10105821235147362,3. language · llm · language model
+lda,2021-01-01,3,0.0823077532115493,3. language · llm · language model
+lda,2021-04-01,3,0.08828012023167356,3. language · llm · language model
+lda,2021-07-01,3,0.0730786952575019,3. language · llm · language model
+lda,2021-10-01,3,0.06166388281667479,3. language · llm · language model
+lda,2022-01-01,3,0.07458794736861066,3. language · llm · language model
+lda,2022-04-01,3,0.0974447364203479,3. language · llm · language model
+lda,2022-07-01,3,0.05869612229228756,3. language · llm · language model
+lda,2022-10-01,3,0.09343693899286301,3. language · llm · language model
+lda,2023-01-01,3,0.0711949084030207,3. language · llm · language model
+lda,2023-04-01,3,0.09048970444316293,3. language · llm · language model
+lda,2023-07-01,3,0.05692192526747057,3. language · llm · language model
+lda,2023-10-01,3,0.13388798824663273,3. language · llm · language model
+lda,2024-01-01,3,0.13730222450464535,3. language · llm · language model
+lda,2024-04-01,3,0.14257475379960136,3. language · llm · language model
+lda,2024-07-01,3,0.10483566760694654,3. language · llm · language model
+lda,2024-10-01,3,0.1192301993423967,3. language · llm · language model
+lda,2025-01-01,3,0.10929785558434649,3. language · llm · language model
+lda,2025-04-01,3,0.11360986226891825,3. language · llm · language model
+lda,2025-07-01,3,0.12004807652456848,3. language · llm · language model
+lda,2025-10-01,3,0.09366523666725558,3. language · llm · language model
+lda,2026-01-01,3,0.09926527782578072,3. language · llm · language model
+lda,2026-04-01,3,0.08882235336554911,3. language · llm · language model
+lda,2018-01-01,4,0.1546076362510218,4. robot · learn · control
+lda,2018-04-01,4,0.17401856445619185,4. robot · learn · control
+lda,2018-07-01,4,0.12523456347490236,4. robot · learn · control
+lda,2018-10-01,4,0.1674061246129798,4. robot · learn · control
+lda,2019-01-01,4,0.15219303072940582,4. robot · learn · control
+lda,2019-04-01,4,0.18463887901070505,4. robot · learn · control
+lda,2019-07-01,4,0.14569936670457542,4. robot · learn · control
+lda,2019-10-01,4,0.16051334685181257,4. robot · learn · control
+lda,2020-01-01,4,0.152097466396288,4. robot · learn · control
+lda,2020-04-01,4,0.165386734655931,4. robot · learn · control
+lda,2020-07-01,4,0.14024229984462375,4. robot · learn · control
+lda,2020-10-01,4,0.1684045826035191,4. robot · learn · control
+lda,2021-01-01,4,0.15064584340174278,4. robot · learn · control
+lda,2021-04-01,4,0.17338870546958024,4. robot · learn · control
+lda,2021-07-01,4,0.15542928678799442,4. robot · learn · control
+lda,2021-10-01,4,0.1778755053624487,4. robot · learn · control
+lda,2022-01-01,4,0.11977958727900452,4. robot · learn · control
+lda,2022-04-01,4,0.16215425543531273,4. robot · learn · control
+lda,2022-07-01,4,0.20221931535558,4. robot · learn · control
+lda,2022-10-01,4,0.14634562193250164,4. robot · learn · control
+lda,2023-01-01,4,0.16473367351599083,4. robot · learn · control
+lda,2023-04-01,4,0.16953560556573338,4. robot · learn · control
+lda,2023-07-01,4,0.17131095040208877,4. robot · learn · control
+lda,2023-10-01,4,0.11944546045647629,4. robot · learn · control
+lda,2024-01-01,4,0.17746586520220045,4. robot · learn · control
+lda,2024-04-01,4,0.1682446679426636,4. robot · learn · control
+lda,2024-07-01,4,0.08675413479580799,4. robot · learn · control
+lda,2024-10-01,4,0.12855915791116995,4. robot · learn · control
+lda,2025-01-01,4,0.1261464383766209,4. robot · learn · control
+lda,2025-04-01,4,0.15018121557756411,4. robot · learn · control
+lda,2025-07-01,4,0.1504833184748495,4. robot · learn · control
+lda,2025-10-01,4,0.17103050761800218,4. robot · learn · control
+lda,2026-01-01,4,0.15283518942548074,4. robot · learn · control
+lda,2026-04-01,4,0.15398565299153652,4. robot · learn · control
+lda,2018-01-01,5,0.19363639747461944,5. data · system · privacy
+lda,2018-04-01,5,0.1169753884582449,5. data · system · privacy
+lda,2018-07-01,5,0.1709695311093142,5. data · system · privacy
+lda,2018-10-01,5,0.13913251806289728,5. data · system · privacy
+lda,2019-01-01,5,0.16527578318749064,5. data · system · privacy
+lda,2019-04-01,5,0.12476986765151675,5. data · system · privacy
+lda,2019-07-01,5,0.22331111391388686,5. data · system · privacy
+lda,2019-10-01,5,0.20309605479192142,5. data · system · privacy
+lda,2020-01-01,5,0.1391924760356267,5. data · system · privacy
+lda,2020-04-01,5,0.17239440821945184,5. data · system · privacy
+lda,2020-07-01,5,0.21005725681910659,5. data · system · privacy
+lda,2020-10-01,5,0.15238116347617212,5. data · system · privacy
+lda,2021-01-01,5,0.17145568466546127,5. data · system · privacy
+lda,2021-04-01,5,0.1993443653083141,5. data · system · privacy
+lda,2021-07-01,5,0.20929033328144842,5. data · system · privacy
+lda,2021-10-01,5,0.1734086816522894,5. data · system · privacy
+lda,2022-01-01,5,0.19366561781355,5. data · system · privacy
+lda,2022-04-01,5,0.15154395994080883,5. data · system · privacy
+lda,2022-07-01,5,0.18521949841680707,5. data · system · privacy
+lda,2022-10-01,5,0.17560105789671646,5. data · system · privacy
+lda,2023-01-01,5,0.22708051088694445,5. data · system · privacy
+lda,2023-04-01,5,0.16810647348051733,5. data · system · privacy
+lda,2023-07-01,5,0.21887417363669315,5. data · system · privacy
+lda,2023-10-01,5,0.20944470293522496,5. data · system · privacy
+lda,2024-01-01,5,0.23404803517636025,5. data · system · privacy
+lda,2024-04-01,5,0.2610640419480972,5. data · system · privacy
+lda,2024-07-01,5,0.2634863977379272,5. data · system · privacy
+lda,2024-10-01,5,0.24899658534071514,5. data · system · privacy
+lda,2025-01-01,5,0.28214014436492585,5. data · system · privacy
+lda,2025-04-01,5,0.22457854232570465,5. data · system · privacy
+lda,2025-07-01,5,0.21241619103533405,5. data · system · privacy
+lda,2025-10-01,5,0.23288741987688985,5. data · system · privacy
+lda,2026-01-01,5,0.22156003078176945,5. data · system · privacy
+lda,2026-04-01,5,0.2319846496308716,5. data · system · privacy
+lda,2018-01-01,6,0.1372734896293976,6. data · query · database
+lda,2018-04-01,6,0.11473405454623874,6. data · query · database
+lda,2018-07-01,6,0.1658328753699056,6. data · query · database
+lda,2018-10-01,6,0.1298105058511159,6. data · query · database
+lda,2019-01-01,6,0.13475143515496313,6. data · query · database
+lda,2019-04-01,6,0.09985085149785254,6. data · query · database
+lda,2019-07-01,6,0.13672382752805506,6. data · query · database
+lda,2019-10-01,6,0.1342778752581426,6. data · query · database
+lda,2020-01-01,6,0.15301395540038085,6. data · query · database
+lda,2020-04-01,6,0.14969413519235744,6. data · query · database
+lda,2020-07-01,6,0.15015919270454892,6. data · query · database
+lda,2020-10-01,6,0.1438885873484987,6. data · query · database
+lda,2021-01-01,6,0.10820065321633027,6. data · query · database
+lda,2021-04-01,6,0.11665839271233544,6. data · query · database
+lda,2021-07-01,6,0.11404851623953151,6. data · query · database
+lda,2021-10-01,6,0.12148181347591887,6. data · query · database
+lda,2022-01-01,6,0.1590900889185198,6. data · query · database
+lda,2022-04-01,6,0.17044623042055687,6. data · query · database
+lda,2022-07-01,6,0.13670385660328646,6. data · query · database
+lda,2022-10-01,6,0.1285735535551976,6. data · query · database
+lda,2023-01-01,6,0.11692759791277321,6. data · query · database
+lda,2023-04-01,6,0.10034296581664567,6. data · query · database
+lda,2023-07-01,6,0.10899342048389773,6. data · query · database
+lda,2023-10-01,6,0.1279150018514647,6. data · query · database
+lda,2024-01-01,6,0.11852205347488132,6. data · query · database
+lda,2024-04-01,6,0.08182217559746412,6. data · query · database
+lda,2024-07-01,6,0.12356928475046577,6. data · query · database
+lda,2024-10-01,6,0.10410740833241866,6. data · query · database
+lda,2025-01-01,6,0.10003090469059851,6. data · query · database
+lda,2025-04-01,6,0.11771491663489779,6. data · query · database
+lda,2025-07-01,6,0.08677564545790688,6. data · query · database
+lda,2025-10-01,6,0.10826946923494986,6. data · query · database
+lda,2026-01-01,6,0.07699700665307645,6. data · query · database
+lda,2026-04-01,6,0.10464425981348656,6. data · query · database
+lda,2018-01-01,7,0.064849499400624,7. attack · detection · image
+lda,2018-04-01,7,0.09158438078590292,7. attack · detection · image
+lda,2018-07-01,7,0.08360511892184426,7. attack · detection · image
+lda,2018-10-01,7,0.09426612184870224,7. attack · detection · image
+lda,2019-01-01,7,0.07901095066815805,7. attack · detection · image
+lda,2019-04-01,7,0.1422837580767697,7. attack · detection · image
+lda,2019-07-01,7,0.11287913526697312,7. attack · detection · image
+lda,2019-10-01,7,0.08979044116351495,7. attack · detection · image
+lda,2020-01-01,7,0.10146644753101706,7. attack · detection · image
+lda,2020-04-01,7,0.044634069081371235,7. attack · detection · image
+lda,2020-07-01,7,0.08205472735522144,7. attack · detection · image
+lda,2020-10-01,7,0.10344318344499995,7. attack · detection · image
+lda,2021-01-01,7,0.10437697354186057,7. attack · detection · image
+lda,2021-04-01,7,0.08079367652481233,7. attack · detection · image
+lda,2021-07-01,7,0.0851105751787683,7. attack · detection · image
+lda,2021-10-01,7,0.11549450451260851,7. attack · detection · image
+lda,2022-01-01,7,0.09510946720418556,7. attack · detection · image
+lda,2022-04-01,7,0.07708588996231325,7. attack · detection · image
+lda,2022-07-01,7,0.08318100250784441,7. attack · detection · image
+lda,2022-10-01,7,0.09830870408586753,7. attack · detection · image
+lda,2023-01-01,7,0.08058664712721321,7. attack · detection · image
+lda,2023-04-01,7,0.09853057430540188,7. attack · detection · image
+lda,2023-07-01,7,0.0881463025705361,7. attack · detection · image
+lda,2023-10-01,7,0.10878514591277887,7. attack · detection · image
+lda,2024-01-01,7,0.08082964140326275,7. attack · detection · image
+lda,2024-04-01,7,0.07332581028995637,7. attack · detection · image
+lda,2024-07-01,7,0.10401937447286909,7. attack · detection · image
+lda,2024-10-01,7,0.08196452142144027,7. attack · detection · image
+lda,2025-01-01,7,0.0942000327441793,7. attack · detection · image
+lda,2025-04-01,7,0.0862138008676515,7. attack · detection · image
+lda,2025-07-01,7,0.06647844102562982,7. attack · detection · image
+lda,2025-10-01,7,0.08346137135902736,7. attack · detection · image
+lda,2026-01-01,7,0.07227162588833877,7. attack · detection · image
+lda,2026-04-01,7,0.0926294411951909,7. attack · detection · image
+lda,2018-01-01,8,0.2003173811329292,8. graph · feature · representation
+lda,2018-04-01,8,0.24797791473788694,8. graph · feature · representation
+lda,2018-07-01,8,0.2345455520310278,8. graph · feature · representation
+lda,2018-10-01,8,0.1986071969030453,8. graph · feature · representation
+lda,2019-01-01,8,0.190110592999494,8. graph · feature · representation
+lda,2019-04-01,8,0.22303751462194585,8. graph · feature · representation
+lda,2019-07-01,8,0.14755588074211687,8. graph · feature · representation
+lda,2019-10-01,8,0.19816335981509678,8. graph · feature · representation
+lda,2020-01-01,8,0.23436709657888719,8. graph · feature · representation
+lda,2020-04-01,8,0.22592031355226727,8. graph · feature · representation
+lda,2020-07-01,8,0.17005035970641957,8. graph · feature · representation
+lda,2020-10-01,8,0.20930939804444063,8. graph · feature · representation
+lda,2021-01-01,8,0.2209968769976622,8. graph · feature · representation
+lda,2021-04-01,8,0.19975043116420815,8. graph · feature · representation
+lda,2021-07-01,8,0.19284631768715255,8. graph · feature · representation
+lda,2021-10-01,8,0.21094261197505929,8. graph · feature · representation
+lda,2022-01-01,8,0.19883843314101227,8. graph · feature · representation
+lda,2022-04-01,8,0.20423947830612432,8. graph · feature · representation
+lda,2022-07-01,8,0.1933661750287474,8. graph · feature · representation
+lda,2022-10-01,8,0.22351862818890225,8. graph · feature · representation
+lda,2023-01-01,8,0.20149076444122374,8. graph · feature · representation
+lda,2023-04-01,8,0.2373803977925072,8. graph · feature · representation
+lda,2023-07-01,8,0.22713905917804605,8. graph · feature · representation
+lda,2023-10-01,8,0.2117854294434012,8. graph · feature · representation
+lda,2024-01-01,8,0.1386507290827167,8. graph · feature · representation
+lda,2024-04-01,8,0.1737173456808822,8. graph · feature · representation
+lda,2024-07-01,8,0.2279339356679788,8. graph · feature · representation
+lda,2024-10-01,8,0.20421943022836866,8. graph · feature · representation
+lda,2025-01-01,8,0.20570616666255712,8. graph · feature · representation
+lda,2025-04-01,8,0.20775543960459353,8. graph · feature · representation
+lda,2025-07-01,8,0.2664423000464109,8. graph · feature · representation
+lda,2025-10-01,8,0.20004468717226503,8. graph · feature · representation
+lda,2026-01-01,8,0.2309451677695142,8. graph · feature · representation
+lda,2026-04-01,8,0.24070598502829427,8. graph · feature · representation
+nmf,2018-01-01,1,0.05432300128003274,1. image · visual · scene
+nmf,2018-04-01,1,0.11284630238219667,1. image · visual · scene
+nmf,2018-07-01,1,0.08639558902116802,1. image · visual · scene
+nmf,2018-10-01,1,0.051326523180552225,1. image · visual · scene
+nmf,2019-01-01,1,0.08436385557916289,1. image · visual · scene
+nmf,2019-04-01,1,0.0840614061067518,1. image · visual · scene
+nmf,2019-07-01,1,0.07903148716467999,1. image · visual · scene
+nmf,2019-10-01,1,0.09365983883673996,1. image · visual · scene
+nmf,2020-01-01,1,0.0892945028108302,1. image · visual · scene
+nmf,2020-04-01,1,0.13933228902990785,1. image · visual · scene
+nmf,2020-07-01,1,0.09063251049246879,1. image · visual · scene
+nmf,2020-10-01,1,0.09627779699056954,1. image · visual · scene
+nmf,2021-01-01,1,0.09831495419890607,1. image · visual · scene
+nmf,2021-04-01,1,0.09358798951492213,1. image · visual · scene
+nmf,2021-07-01,1,0.10309603340383909,1. image · visual · scene
+nmf,2021-10-01,1,0.13440446468440187,1. image · visual · scene
+nmf,2022-01-01,1,0.08525475254527783,1. image · visual · scene
+nmf,2022-04-01,1,0.12974739674927355,1. image · visual · scene
+nmf,2022-07-01,1,0.12094857120996702,1. image · visual · scene
+nmf,2022-10-01,1,0.13295349250149918,1. image · visual · scene
+nmf,2023-01-01,1,0.07240090292528084,1. image · visual · scene
+nmf,2023-04-01,1,0.18243751336762162,1. image · visual · scene
+nmf,2023-07-01,1,0.10982238304090551,1. image · visual · scene
+nmf,2023-10-01,1,0.17601593452917114,1. image · visual · scene
+nmf,2024-01-01,1,0.14845059051178983,1. image · visual · scene
+nmf,2024-04-01,1,0.1960526018130679,1. image · visual · scene
+nmf,2024-07-01,1,0.1599045536251518,1. image · visual · scene
+nmf,2024-10-01,1,0.2103284070358732,1. image · visual · scene
+nmf,2025-01-01,1,0.12779618160764,1. image · visual · scene
+nmf,2025-04-01,1,0.20348927620353532,1. image · visual · scene
+nmf,2025-07-01,1,0.23744896778804028,1. image · visual · scene
+nmf,2025-10-01,1,0.22034066886595066,1. image · visual · scene
+nmf,2026-01-01,1,0.21903864950316962,1. image · visual · scene
+nmf,2026-04-01,1,0.22686516027586923,1. image · visual · scene
+nmf,2018-01-01,2,0.15530401029361712,2. robot · environment · control
+nmf,2018-04-01,2,0.19567933530939413,2. robot · environment · control
+nmf,2018-07-01,2,0.1339044324345542,2. robot · environment · control
+nmf,2018-10-01,2,0.1781279976631438,2. robot · environment · control
+nmf,2019-01-01,2,0.1847880321541304,2. robot · environment · control
+nmf,2019-04-01,2,0.169004643674275,2. robot · environment · control
+nmf,2019-07-01,2,0.15882098200963818,2. robot · environment · control
+nmf,2019-10-01,2,0.14525184587279352,2. robot · environment · control
+nmf,2020-01-01,2,0.15560906554384898,2. robot · environment · control
+nmf,2020-04-01,2,0.17486122523137151,2. robot · environment · control
+nmf,2020-07-01,2,0.1686786724435079,2. robot · environment · control
+nmf,2020-10-01,2,0.20331882573129514,2. robot · environment · control
+nmf,2021-01-01,2,0.15328902314694196,2. robot · environment · control
+nmf,2021-04-01,2,0.18016426677909791,2. robot · environment · control
+nmf,2021-07-01,2,0.18077526406416347,2. robot · environment · control
+nmf,2021-10-01,2,0.19290851504419837,2. robot · environment · control
+nmf,2022-01-01,2,0.14127073194915743,2. robot · environment · control
+nmf,2022-04-01,2,0.16864583085726076,2. robot · environment · control
+nmf,2022-07-01,2,0.20792835938968052,2. robot · environment · control
+nmf,2022-10-01,2,0.13415758376371356,2. robot · environment · control
+nmf,2023-01-01,2,0.14655178845910677,2. robot · environment · control
+nmf,2023-04-01,2,0.17712449119325188,2. robot · environment · control
+nmf,2023-07-01,2,0.19290968530012226,2. robot · environment · control
+nmf,2023-10-01,2,0.08169438043953316,2. robot · environment · control
+nmf,2024-01-01,2,0.17713462821699,2. robot · environment · control
+nmf,2024-04-01,2,0.1424563045757226,2. robot · environment · control
+nmf,2024-07-01,2,0.0877846234527096,2. robot · environment · control
+nmf,2024-10-01,2,0.1353328889995509,2. robot · environment · control
+nmf,2025-01-01,2,0.1268876991396259,2. robot · environment · control
+nmf,2025-04-01,2,0.12329984328756902,2. robot · environment · control
+nmf,2025-07-01,2,0.12380781483908426,2. robot · environment · control
+nmf,2025-10-01,2,0.18085011631696626,2. robot · environment · control
+nmf,2026-01-01,2,0.14640310245428792,2. robot · environment · control
+nmf,2026-04-01,2,0.0992957839824399,2. robot · environment · control
+nmf,2018-01-01,3,0.1413654671450167,3. data · privacy · protocol
+nmf,2018-04-01,3,0.09750461008523378,3. data · privacy · protocol
+nmf,2018-07-01,3,0.1949846278479492,3. data · privacy · protocol
+nmf,2018-10-01,3,0.161117094191114,3. data · privacy · protocol
+nmf,2019-01-01,3,0.14943041005700575,3. data · privacy · protocol
+nmf,2019-04-01,3,0.06780875329177623,3. data · privacy · protocol
+nmf,2019-07-01,3,0.14177523714592635,3. data · privacy · protocol
+nmf,2019-10-01,3,0.1911882194753775,3. data · privacy · protocol
+nmf,2020-01-01,3,0.18318075186111507,3. data · privacy · protocol
+nmf,2020-04-01,3,0.16800992105037313,3. data · privacy · protocol
+nmf,2020-07-01,3,0.16920194542197692,3. data · privacy · protocol
+nmf,2020-10-01,3,0.177824566031805,3. data · privacy · protocol
+nmf,2021-01-01,3,0.1356201933735892,3. data · privacy · protocol
+nmf,2021-04-01,3,0.18282864022209794,3. data · privacy · protocol
+nmf,2021-07-01,3,0.10628894912021598,3. data · privacy · protocol
+nmf,2021-10-01,3,0.13908191909203085,3. data · privacy · protocol
+nmf,2022-01-01,3,0.16978811738281768,3. data · privacy · protocol
+nmf,2022-04-01,3,0.17829358803138487,3. data · privacy · protocol
+nmf,2022-07-01,3,0.12702674168444716,3. data · privacy · protocol
+nmf,2022-10-01,3,0.144086180362753,3. data · privacy · protocol
+nmf,2023-01-01,3,0.15615567434625605,3. data · privacy · protocol
+nmf,2023-04-01,3,0.12949788505374138,3. data · privacy · protocol
+nmf,2023-07-01,3,0.15375372441228752,3. data · privacy · protocol
+nmf,2023-10-01,3,0.13513155426658474,3. data · privacy · protocol
+nmf,2024-01-01,3,0.13114230550764994,3. data · privacy · protocol
+nmf,2024-04-01,3,0.10116549342404305,3. data · privacy · protocol
+nmf,2024-07-01,3,0.11332151361229713,3. data · privacy · protocol
+nmf,2024-10-01,3,0.13322561464116245,3. data · privacy · protocol
+nmf,2025-01-01,3,0.1262878167194803,3. data · privacy · protocol
+nmf,2025-04-01,3,0.13293306200097152,3. data · privacy · protocol
+nmf,2025-07-01,3,0.08795164584562384,3. data · privacy · protocol
+nmf,2025-10-01,3,0.1261754997854296,3. data · privacy · protocol
+nmf,2026-01-01,3,0.08893641517983598,3. data · privacy · protocol
+nmf,2026-04-01,3,0.1242609401051913,3. data · privacy · protocol
+nmf,2018-01-01,4,0.21626330733221186,4. network · deep · image
+nmf,2018-04-01,4,0.17494156661256952,4. network · deep · image
+nmf,2018-07-01,4,0.1385696968880516,4. network · deep · image
+nmf,2018-10-01,4,0.20147872355026653,4. network · deep · image
+nmf,2019-01-01,4,0.1376236564963299,4. network · deep · image
+nmf,2019-04-01,4,0.22716116411943732,4. network · deep · image
+nmf,2019-07-01,4,0.12819709858925024,4. network · deep · image
+nmf,2019-10-01,4,0.14402538776230953,4. network · deep · image
+nmf,2020-01-01,4,0.16077458682596332,4. network · deep · image
+nmf,2020-04-01,4,0.07153604053670747,4. network · deep · image
+nmf,2020-07-01,4,0.11716563233585241,4. network · deep · image
+nmf,2020-10-01,4,0.11731821522654523,4. network · deep · image
+nmf,2021-01-01,4,0.17168046764826148,4. network · deep · image
+nmf,2021-04-01,4,0.10625906299285318,4. network · deep · image
+nmf,2021-07-01,4,0.11354119331488595,4. network · deep · image
+nmf,2021-10-01,4,0.1585165412745118,4. network · deep · image
+nmf,2022-01-01,4,0.1579232038311583,4. network · deep · image
+nmf,2022-04-01,4,0.11232994163809513,4. network · deep · image
+nmf,2022-07-01,4,0.10626438022137098,4. network · deep · image
+nmf,2022-10-01,4,0.14371132044424334,4. network · deep · image
+nmf,2023-01-01,4,0.12300602536263486,4. network · deep · image
+nmf,2023-04-01,4,0.10699791313468628,4. network · deep · image
+nmf,2023-07-01,4,0.12363693638715186,4. network · deep · image
+nmf,2023-10-01,4,0.09736364303885806,4. network · deep · image
+nmf,2024-01-01,4,0.07502349705862281,4. network · deep · image
+nmf,2024-04-01,4,0.045432539793640786,4. network · deep · image
+nmf,2024-07-01,4,0.08733260945707397,4. network · deep · image
+nmf,2024-10-01,4,0.07251189030772882,4. network · deep · image
+nmf,2025-01-01,4,0.05522800631670233,4. network · deep · image
+nmf,2025-04-01,4,0.07025861286402416,4. network · deep · image
+nmf,2025-07-01,4,0.059121761149098166,4. network · deep · image
+nmf,2025-10-01,4,0.04699799659130753,4. network · deep · image
+nmf,2026-01-01,4,0.10885542591867532,4. network · deep · image
+nmf,2026-04-01,4,0.054072977494068454,4. network · deep · image
+nmf,2018-01-01,5,0.0768270848169968,5. llm · attack · large language
+nmf,2018-04-01,5,0.06339599464277137,5. llm · attack · large language
+nmf,2018-07-01,5,0.080680720467668,5. llm · attack · large language
+nmf,2018-10-01,5,0.06407853393860388,5. llm · attack · large language
+nmf,2019-01-01,5,0.06444975187322823,5. llm · attack · large language
+nmf,2019-04-01,5,0.0633205100202702,5. llm · attack · large language
+nmf,2019-07-01,5,0.09472298780686861,5. llm · attack · large language
+nmf,2019-10-01,5,0.08018600131173723,5. llm · attack · large language
+nmf,2020-01-01,5,0.0657930453459914,5. llm · attack · large language
+nmf,2020-04-01,5,0.05085024927613513,5. llm · attack · large language
+nmf,2020-07-01,5,0.08681332794613132,5. llm · attack · large language
+nmf,2020-10-01,5,0.06765854654215159,5. llm · attack · large language
+nmf,2021-01-01,5,0.05133584774725164,5. llm · attack · large language
+nmf,2021-04-01,5,0.061021227164702485,5. llm · attack · large language
+nmf,2021-07-01,5,0.10033443577401205,5. llm · attack · large language
+nmf,2021-10-01,5,0.08386698381816131,5. llm · attack · large language
+nmf,2022-01-01,5,0.10424100647333116,5. llm · attack · large language
+nmf,2022-04-01,5,0.041414419131636994,5. llm · attack · large language
+nmf,2022-07-01,5,0.09992601304904168,5. llm · attack · large language
+nmf,2022-10-01,5,0.07099323255545505,5. llm · attack · large language
+nmf,2023-01-01,5,0.09859751634900371,5. llm · attack · large language
+nmf,2023-04-01,5,0.07353027354621167,5. llm · attack · large language
+nmf,2023-07-01,5,0.10319357715421462,5. llm · attack · large language
+nmf,2023-10-01,5,0.18231564870693445,5. llm · attack · large language
+nmf,2024-01-01,5,0.2000319156015396,5. llm · attack · large language
+nmf,2024-04-01,5,0.22811645882159923,5. llm · attack · large language
+nmf,2024-07-01,5,0.25331473066338733,5. llm · attack · large language
+nmf,2024-10-01,5,0.1876250298635386,5. llm · attack · large language
+nmf,2025-01-01,5,0.2586138348238924,5. llm · attack · large language
+nmf,2025-04-01,5,0.21292486319623127,5. llm · attack · large language
+nmf,2025-07-01,5,0.17973786464096855,5. llm · attack · large language
+nmf,2025-10-01,5,0.2108298320079673,5. llm · attack · large language
+nmf,2026-01-01,5,0.16049982956324405,5. llm · attack · large language
+nmf,2026-04-01,5,0.1982765381352342,5. llm · attack · large language
+nmf,2018-01-01,6,0.163406033677226,6. language · text · word
+nmf,2018-04-01,6,0.17446786887386165,6. language · text · word
+nmf,2018-07-01,6,0.1828541014735636,6. language · text · word
+nmf,2018-10-01,6,0.15305152751294093,6. language · text · word
+nmf,2019-01-01,6,0.16200407794508942,6. language · text · word
+nmf,2019-04-01,6,0.16827751090735918,6. language · text · word
+nmf,2019-07-01,6,0.20690348447067483,6. language · text · word
+nmf,2019-10-01,6,0.15202019174593195,6. language · text · word
+nmf,2020-01-01,6,0.13054768857323887,6. language · text · word
+nmf,2020-04-01,6,0.16384063839630691,6. language · text · word
+nmf,2020-07-01,6,0.18054647550251576,6. language · text · word
+nmf,2020-10-01,6,0.1810898910735629,6. language · text · word
+nmf,2021-01-01,6,0.19418402178493174,6. language · text · word
+nmf,2021-04-01,6,0.17132169026020855,6. language · text · word
+nmf,2021-07-01,6,0.15807350093999697,6. language · text · word
+nmf,2021-10-01,6,0.10046459036078177,6. language · text · word
+nmf,2022-01-01,6,0.13298426524377055,6. language · text · word
+nmf,2022-04-01,6,0.16049928134546518,6. language · text · word
+nmf,2022-07-01,6,0.15264803345649128,6. language · text · word
+nmf,2022-10-01,6,0.1437236788560592,6. language · text · word
+nmf,2023-01-01,6,0.15606442948866214,6. language · text · word
+nmf,2023-04-01,6,0.11829289948735633,6. language · text · word
+nmf,2023-07-01,6,0.08804690590044184,6. language · text · word
+nmf,2023-10-01,6,0.09537021755595186,6. language · text · word
+nmf,2024-01-01,6,0.11247309339364775,6. language · text · word
+nmf,2024-04-01,6,0.10056484066605574,6. language · text · word
+nmf,2024-07-01,6,0.09139506427777544,6. language · text · word
+nmf,2024-10-01,6,0.07672909354620243,6. language · text · word
+nmf,2025-01-01,6,0.08210573540842782,6. language · text · word
+nmf,2025-04-01,6,0.0690591198930014,6. language · text · word
+nmf,2025-07-01,6,0.08324479853338494,6. language · text · word
+nmf,2025-10-01,6,0.0430148869308744,6. language · text · word
+nmf,2026-01-01,6,0.07860236616341679,6. language · text · word
+nmf,2026-04-01,6,0.048213012382110496,6. language · text · word
+nmf,2018-01-01,7,0.07849081963594416,7. query · algorithm · search
+nmf,2018-04-01,7,0.09954994472233838,7. query · algorithm · search
+nmf,2018-07-01,7,0.09163848781044606,7. query · algorithm · search
+nmf,2018-10-01,7,0.0960272529844777,7. query · algorithm · search
+nmf,2019-01-01,7,0.10145799075770312,7. query · algorithm · search
+nmf,2019-04-01,7,0.13838969168353088,7. query · algorithm · search
+nmf,2019-07-01,7,0.07031709910884786,7. query · algorithm · search
+nmf,2019-10-01,7,0.0663263656380993,7. query · algorithm · search
+nmf,2020-01-01,7,0.09633857336819573,7. query · algorithm · search
+nmf,2020-04-01,7,0.12792641865443116,7. query · algorithm · search
+nmf,2020-07-01,7,0.07811117594188614,7. query · algorithm · search
+nmf,2020-10-01,7,0.06429846402976584,7. query · algorithm · search
+nmf,2021-01-01,7,0.09698161914497222,7. query · algorithm · search
+nmf,2021-04-01,7,0.09851254403192722,7. query · algorithm · search
+nmf,2021-07-01,7,0.09445881964388257,7. query · algorithm · search
+nmf,2021-10-01,7,0.08906566695384527,7. query · algorithm · search
+nmf,2022-01-01,7,0.0870909880289198,7. query · algorithm · search
+nmf,2022-04-01,7,0.11568960432714409,7. query · algorithm · search
+nmf,2022-07-01,7,0.11333844804191218,7. query · algorithm · search
+nmf,2022-10-01,7,0.13282299536002665,7. query · algorithm · search
+nmf,2023-01-01,7,0.12457977496714817,7. query · algorithm · search
+nmf,2023-04-01,7,0.11869793318639033,7. query · algorithm · search
+nmf,2023-07-01,7,0.13602920093335719,7. query · algorithm · search
+nmf,2023-10-01,7,0.10472534084711245,7. query · algorithm · search
+nmf,2024-01-01,7,0.06850653422274167,7. query · algorithm · search
+nmf,2024-04-01,7,0.12943007063458947,7. query · algorithm · search
+nmf,2024-07-01,7,0.07121788294829384,7. query · algorithm · search
+nmf,2024-10-01,7,0.0929627331606478,7. query · algorithm · search
+nmf,2025-01-01,7,0.13040597114575514,7. query · algorithm · search
+nmf,2025-04-01,7,0.1409290725843497,7. query · algorithm · search
+nmf,2025-07-01,7,0.1525545217953598,7. query · algorithm · search
+nmf,2025-10-01,7,0.10551871506376795,7. query · algorithm · search
+nmf,2026-01-01,7,0.1252721403947418,7. query · algorithm · search
+nmf,2026-04-01,7,0.17233508739787615,7. query · algorithm · search
+nmf,2018-01-01,8,0.11402027581895463,8. graph · query · data
+nmf,2018-04-01,8,0.08161437737163445,8. graph · query · data
+nmf,2018-07-01,8,0.0909723440565993,8. graph · query · data
+nmf,2018-10-01,8,0.09479234697890099,8. graph · query · data
+nmf,2019-01-01,8,0.11588222513735034,8. graph · query · data
+nmf,2019-04-01,8,0.08197632019659937,8. graph · query · data
+nmf,2019-07-01,8,0.12023162370411394,8. graph · query · data
+nmf,2019-10-01,8,0.127342149357011,8. graph · query · data
+nmf,2020-01-01,8,0.11846178567081643,8. graph · query · data
+nmf,2020-04-01,8,0.10364321782476686,8. graph · query · data
+nmf,2020-07-01,8,0.1088502599156607,8. graph · query · data
+nmf,2020-10-01,8,0.09221369437430474,8. graph · query · data
+nmf,2021-01-01,8,0.09859387295514568,8. graph · query · data
+nmf,2021-04-01,8,0.10630457903419059,8. graph · query · data
+nmf,2021-07-01,8,0.14343180373900394,8. graph · query · data
+nmf,2021-10-01,8,0.10169131877206875,8. graph · query · data
+nmf,2022-01-01,8,0.12144693454556724,8. graph · query · data
+nmf,2022-04-01,8,0.09337993791973946,8. graph · query · data
+nmf,2022-07-01,8,0.07191945294708914,8. graph · query · data
+nmf,2022-10-01,8,0.09755151615625003,8. graph · query · data
+nmf,2023-01-01,8,0.12264388810190749,8. graph · query · data
+nmf,2023-04-01,8,0.0934210910307405,8. graph · query · data
+nmf,2023-07-01,8,0.09260758687151921,8. graph · query · data
+nmf,2023-10-01,8,0.12738328061585416,8. graph · query · data
+nmf,2024-01-01,8,0.08723743548701844,8. graph · query · data
+nmf,2024-04-01,8,0.0567816902712812,8. graph · query · data
+nmf,2024-07-01,8,0.1357290219633109,8. graph · query · data
+nmf,2024-10-01,8,0.09128434244529576,8. graph · query · data
+nmf,2025-01-01,8,0.09267475483847613,8. graph · query · data
+nmf,2025-04-01,8,0.047106149970317576,8. graph · query · data
+nmf,2025-07-01,8,0.07613262540844011,8. graph · query · data
+nmf,2025-10-01,8,0.06627228443773633,8. graph · query · data
+nmf,2026-01-01,8,0.07239207082262851,8. graph · query · data
+nmf,2026-04-01,8,0.07668050022721026,8. graph · query · data
+lsa,2018-01-01,1,0.5168139549517955,1. data · learn · system
+lsa,2018-04-01,1,0.5407825775149245,1. data · learn · system
+lsa,2018-07-01,1,0.5246397946626209,1. data · learn · system
+lsa,2018-10-01,1,0.5109308729189606,1. data · learn · system
+lsa,2019-01-01,1,0.5365019331143577,1. data · learn · system
+lsa,2019-04-01,1,0.5354683401724915,1. data · learn · system
+lsa,2019-07-01,1,0.5208689985910218,1. data · learn · system
+lsa,2019-10-01,1,0.5112679456217603,1. data · learn · system
+lsa,2020-01-01,1,0.5015584347809235,1. data · learn · system
+lsa,2020-04-01,1,0.542529870971834,1. data · learn · system
+lsa,2020-07-01,1,0.5087804526564689,1. data · learn · system
+lsa,2020-10-01,1,0.5090679060512583,1. data · learn · system
+lsa,2021-01-01,1,0.5406689153411826,1. data · learn · system
+lsa,2021-04-01,1,0.518657161496819,1. data · learn · system
+lsa,2021-07-01,1,0.49342414013436053,1. data · learn · system
+lsa,2021-10-01,1,0.5150781084244282,1. data · learn · system
+lsa,2022-01-01,1,0.5063000910998311,1. data · learn · system
+lsa,2022-04-01,1,0.5371434405876353,1. data · learn · system
+lsa,2022-07-01,1,0.5088118256898595,1. data · learn · system
+lsa,2022-10-01,1,0.5074913988582526,1. data · learn · system
+lsa,2023-01-01,1,0.5195858808309984,1. data · learn · system
+lsa,2023-04-01,1,0.49265756817976936,1. data · learn · system
+lsa,2023-07-01,1,0.4836676240761638,1. data · learn · system
+lsa,2023-10-01,1,0.5070858797444007,1. data · learn · system
+lsa,2024-01-01,1,0.4748100059947779,1. data · learn · system
+lsa,2024-04-01,1,0.47264279619590266,1. data · learn · system
+lsa,2024-07-01,1,0.48284873467350875,1. data · learn · system
+lsa,2024-10-01,1,0.45960729010869883,1. data · learn · system
+lsa,2025-01-01,1,0.46491692757814757,1. data · learn · system
+lsa,2025-04-01,1,0.46435686075939026,1. data · learn · system
+lsa,2025-07-01,1,0.4983480731606955,1. data · learn · system
+lsa,2025-10-01,1,0.46496168037838675,1. data · learn · system
+lsa,2026-01-01,1,0.5109616556418188,1. data · learn · system
+lsa,2026-04-01,1,0.4881921868147878,1. data · learn · system
+lsa,2018-01-01,2,0.08953572428120452,2. robot · environment · control
+lsa,2018-04-01,2,0.10280010208982314,2. robot · environment · control
+lsa,2018-07-01,2,0.07439977730431453,2. robot · environment · control
+lsa,2018-10-01,2,0.10272450805022534,2. robot · environment · control
+lsa,2019-01-01,2,0.10121733512529212,2. robot · environment · control
+lsa,2019-04-01,2,0.09623444945856123,2. robot · environment · control
+lsa,2019-07-01,2,0.08397985019308628,2. robot · environment · control
+lsa,2019-10-01,2,0.08477659097928852,2. robot · environment · control
+lsa,2020-01-01,2,0.09553099275034788,2. robot · environment · control
+lsa,2020-04-01,2,0.08399113990656061,2. robot · environment · control
+lsa,2020-07-01,2,0.08836355146353084,2. robot · environment · control
+lsa,2020-10-01,2,0.09978448153960269,2. robot · environment · control
+lsa,2021-01-01,2,0.08881397683859507,2. robot · environment · control
+lsa,2021-04-01,2,0.09196452938141397,2. robot · environment · control
+lsa,2021-07-01,2,0.08743299072614284,2. robot · environment · control
+lsa,2021-10-01,2,0.08954408845230127,2. robot · environment · control
+lsa,2022-01-01,2,0.07264980831959428,2. robot · environment · control
+lsa,2022-04-01,2,0.08152686637298905,2. robot · environment · control
+lsa,2022-07-01,2,0.10697525400477656,2. robot · environment · control
+lsa,2022-10-01,2,0.08247960721736158,2. robot · environment · control
+lsa,2023-01-01,2,0.08040269159167085,2. robot · environment · control
+lsa,2023-04-01,2,0.08195080224979125,2. robot · environment · control
+lsa,2023-07-01,2,0.10208989402778622,2. robot · environment · control
+lsa,2023-10-01,2,0.0509567264736448,2. robot · environment · control
+lsa,2024-01-01,2,0.09128881594362437,2. robot · environment · control
+lsa,2024-04-01,2,0.07330284907037117,2. robot · environment · control
+lsa,2024-07-01,2,0.04410423776467292,2. robot · environment · control
+lsa,2024-10-01,2,0.07712898658738927,2. robot · environment · control
+lsa,2025-01-01,2,0.05230768459170466,2. robot · environment · control
+lsa,2025-04-01,2,0.06700398509086716,2. robot · environment · control
+lsa,2025-07-01,2,0.06214285836425343,2. robot · environment · control
+lsa,2025-10-01,2,0.08936510743365333,2. robot · environment · control
+lsa,2026-01-01,2,0.08090197787069364,2. robot · environment · control
+lsa,2026-04-01,2,0.05004434026359518,2. robot · environment · control
+lsa,2018-01-01,3,0.09776933943203339,3. query · data · database
+lsa,2018-04-01,3,0.07464459142064032,3. query · data · database
+lsa,2018-07-01,3,0.09837059272200113,3. query · data · database
+lsa,2018-10-01,3,0.08726659650399698,3. query · data · database
+lsa,2019-01-01,3,0.10071926189880208,3. query · data · database
+lsa,2019-04-01,3,0.06840102082781163,3. query · data · database
+lsa,2019-07-01,3,0.09536186760836719,3. query · data · database
+lsa,2019-10-01,3,0.10642990086440869,3. query · data · database
+lsa,2020-01-01,3,0.10691324973121515,3. query · data · database
+lsa,2020-04-01,3,0.10511371749933796,3. query · data · database
+lsa,2020-07-01,3,0.09851803784178406,3. query · data · database
+lsa,2020-10-01,3,0.08200708236140264,3. query · data · database
+lsa,2021-01-01,3,0.07727859604038277,3. query · data · database
+lsa,2021-04-01,3,0.10397674357048634,3. query · data · database
+lsa,2021-07-01,3,0.11393726253042524,3. query · data · database
+lsa,2021-10-01,3,0.07971498164318312,3. query · data · database
+lsa,2022-01-01,3,0.09528355587593182,3. query · data · database
+lsa,2022-04-01,3,0.10813317700561055,3. query · data · database
+lsa,2022-07-01,3,0.10275387011876153,3. query · data · database
+lsa,2022-10-01,3,0.09902703574045078,3. query · data · database
+lsa,2023-01-01,3,0.09283879194663487,3. query · data · database
+lsa,2023-04-01,3,0.0725805786903498,3. query · data · database
+lsa,2023-07-01,3,0.09774593170697297,3. query · data · database
+lsa,2023-10-01,3,0.09014880624702555,3. query · data · database
+lsa,2024-01-01,3,0.08387703063682332,3. query · data · database
+lsa,2024-04-01,3,0.08024781139475377,3. query · data · database
+lsa,2024-07-01,3,0.09227847009150258,3. query · data · database
+lsa,2024-10-01,3,0.07767007577653291,3. query · data · database
+lsa,2025-01-01,3,0.08879134161573198,3. query · data · database
+lsa,2025-04-01,3,0.07872934997953557,3. query · data · database
+lsa,2025-07-01,3,0.07141024191840946,3. query · data · database
+lsa,2025-10-01,3,0.07966290685245174,3. query · data · database
+lsa,2026-01-01,3,0.07008899518452884,3. query · data · database
+lsa,2026-04-01,3,0.08137912094024359,3. query · data · database
+lsa,2018-01-01,4,0.10062317350779676,4. attack · network · security
+lsa,2018-04-01,4,0.0960217776413773,4. attack · network · security
+lsa,2018-07-01,4,0.1073724226673253,4. attack · network · security
+lsa,2018-10-01,4,0.12003137512898882,4. attack · network · security
+lsa,2019-01-01,4,0.0768270825289084,4. attack · network · security
+lsa,2019-04-01,4,0.11277829935368705,4. attack · network · security
+lsa,2019-07-01,4,0.08114970393307153,4. attack · network · security
+lsa,2019-10-01,4,0.08254103675197004,4. attack · network · security
+lsa,2020-01-01,4,0.10525928603338511,4. attack · network · security
+lsa,2020-04-01,4,0.06786125516047384,4. attack · network · security
+lsa,2020-07-01,4,0.08798632946334635,4. attack · network · security
+lsa,2020-10-01,4,0.08619812144907507,4. attack · network · security
+lsa,2021-01-01,4,0.09321782222836275,4. attack · network · security
+lsa,2021-04-01,4,0.06279280949033803,4. attack · network · security
+lsa,2021-07-01,4,0.07508440571986785,4. attack · network · security
+lsa,2021-10-01,4,0.09128549707120351,4. attack · network · security
+lsa,2022-01-01,4,0.09792384805320514,4. attack · network · security
+lsa,2022-04-01,4,0.07827231029622432,4. attack · network · security
+lsa,2022-07-01,4,0.0636329730373303,4. attack · network · security
+lsa,2022-10-01,4,0.08506238102238713,4. attack · network · security
+lsa,2023-01-01,4,0.07863865097840092,4. attack · network · security
+lsa,2023-04-01,4,0.07543431899970018,4. attack · network · security
+lsa,2023-07-01,4,0.0577794694126732,4. attack · network · security
+lsa,2023-10-01,4,0.06502622248649179,4. attack · network · security
+lsa,2024-01-01,4,0.054332783286358564,4. attack · network · security
+lsa,2024-04-01,4,0.036876083964495626,4. attack · network · security
+lsa,2024-07-01,4,0.07295209894925937,4. attack · network · security
+lsa,2024-10-01,4,0.04488532002806367,4. attack · network · security
+lsa,2025-01-01,4,0.059305344099127244,4. attack · network · security
+lsa,2025-04-01,4,0.04981079312069286,4. attack · network · security
+lsa,2025-07-01,4,0.032391065984864686,4. attack · network · security
+lsa,2025-10-01,4,0.04554095565169512,4. attack · network · security
+lsa,2026-01-01,4,0.04736726526543874,4. attack · network · security
+lsa,2026-04-01,4,0.04554449586726052,4. attack · network · security
+lsa,2018-01-01,5,0.05315941552715062,5. attack · llm · security
+lsa,2018-04-01,5,0.052101373237526935,5. attack · llm · security
+lsa,2018-07-01,5,0.06998621399056018,5. attack · llm · security
+lsa,2018-10-01,5,0.06343419067003611,5. attack · llm · security
+lsa,2019-01-01,5,0.04815382919728357,5. attack · llm · security
+lsa,2019-04-01,5,0.04623830699747511,5. attack · llm · security
+lsa,2019-07-01,5,0.06598453456423363,5. attack · llm · security
+lsa,2019-10-01,5,0.05490106647011987,5. attack · llm · security
+lsa,2020-01-01,5,0.048190624156106435,5. attack · llm · security
+lsa,2020-04-01,5,0.04005854981144355,5. attack · llm · security
+lsa,2020-07-01,5,0.06388823673129954,5. attack · llm · security
+lsa,2020-10-01,5,0.05495998632804992,5. attack · llm · security
+lsa,2021-01-01,5,0.04603449662580637,5. attack · llm · security
+lsa,2021-04-01,5,0.04774433064711868,5. attack · llm · security
+lsa,2021-07-01,5,0.0678977026412967,5. attack · llm · security
+lsa,2021-10-01,5,0.04747376158428876,5. attack · llm · security
+lsa,2022-01-01,5,0.07000085357697516,5. attack · llm · security
+lsa,2022-04-01,5,0.04130582262088602,5. attack · llm · security
+lsa,2022-07-01,5,0.05958297153523261,5. attack · llm · security
+lsa,2022-10-01,5,0.06292677208688886,5. attack · llm · security
+lsa,2023-01-01,5,0.07126361674066987,5. attack · llm · security
+lsa,2023-04-01,5,0.06028394381555842,5. attack · llm · security
+lsa,2023-07-01,5,0.05032102130054462,5. attack · llm · security
+lsa,2023-10-01,5,0.09525589479757164,5. attack · llm · security
+lsa,2024-01-01,5,0.09937963972629482,5. attack · llm · security
+lsa,2024-04-01,5,0.09357991435720348,5. attack · llm · security
+lsa,2024-07-01,5,0.1050977581545043,5. attack · llm · security
+lsa,2024-10-01,5,0.08530624082711903,5. attack · llm · security
+lsa,2025-01-01,5,0.11149722455919114,5. attack · llm · security
+lsa,2025-04-01,5,0.09291714239033931,5. attack · llm · security
+lsa,2025-07-01,5,0.07590551905943305,5. attack · llm · security
+lsa,2025-10-01,5,0.08729346060816272,5. attack · llm · security
+lsa,2026-01-01,5,0.07972872749001364,5. attack · llm · security
+lsa,2026-04-01,5,0.09087781693976577,5. attack · llm · security
+lsa,2018-01-01,6,0.019977263657751994,6. llm · large language · image
+lsa,2018-04-01,6,0.024712994525598986,6. llm · large language · image
+lsa,2018-07-01,6,0.013051340878665506,6. llm · large language · image
+lsa,2018-10-01,6,0.022583940861006832,6. llm · large language · image
+lsa,2019-01-01,6,0.021015958542489634,6. llm · large language · image
+lsa,2019-04-01,6,0.027400974592317422,6. llm · large language · image
+lsa,2019-07-01,6,0.025598300863618282,6. llm · large language · image
+lsa,2019-10-01,6,0.029518137776184155,6. llm · large language · image
+lsa,2020-01-01,6,0.028007877418543017,6. llm · large language · image
+lsa,2020-04-01,6,0.02021139504743842,6. llm · large language · image
+lsa,2020-07-01,6,0.02041070749906749,6. llm · large language · image
+lsa,2020-10-01,6,0.028069718672865597,6. llm · large language · image
+lsa,2021-01-01,6,0.025505881078568736,6. llm · large language · image
+lsa,2021-04-01,6,0.028072342057366508,6. llm · large language · image
+lsa,2021-07-01,6,0.026635841786343303,6. llm · large language · image
+lsa,2021-10-01,6,0.02946370371113054,6. llm · large language · image
+lsa,2022-01-01,6,0.03266009244739968,6. llm · large language · image
+lsa,2022-04-01,6,0.035793672423240525,6. llm · large language · image
+lsa,2022-07-01,6,0.030174116209955214,6. llm · large language · image
+lsa,2022-10-01,6,0.03573348658097615,6. llm · large language · image
+lsa,2023-01-01,6,0.033367579939313136,6. llm · large language · image
+lsa,2023-04-01,6,0.05432185065738192,6. llm · large language · image
+lsa,2023-07-01,6,0.05759165868533034,6. llm · large language · image
+lsa,2023-10-01,6,0.08456322435769446,6. llm · large language · image
+lsa,2024-01-01,6,0.07733824513777678,6. llm · large language · image
+lsa,2024-04-01,6,0.1058169304590143,6. llm · large language · image
+lsa,2024-07-01,6,0.08668706479101394,6. llm · large language · image
+lsa,2024-10-01,6,0.10716752365949936,6. llm · large language · image
+lsa,2025-01-01,6,0.11221262653055974,6. llm · large language · image
+lsa,2025-04-01,6,0.11574368408934785,6. llm · large language · image
+lsa,2025-07-01,6,0.1299778620735858,6. llm · large language · image
+lsa,2025-10-01,6,0.1175288919430008,6. llm · large language · image
+lsa,2026-01-01,6,0.11357918074861516,6. llm · large language · image
+lsa,2026-04-01,6,0.13352878171932692,6. llm · large language · image
+lsa,2018-01-01,7,0.07707806989797047,7. object · information · detection
+lsa,2018-04-01,7,0.05413598772735495,7. object · information · detection
+lsa,2018-07-01,7,0.0656305151740402,7. object · information · detection
+lsa,2018-10-01,7,0.048453771213808824,7. object · information · detection
+lsa,2019-01-01,7,0.0750593122717957,7. object · information · detection
+lsa,2019-04-01,7,0.05404815868656238,7. object · information · detection
+lsa,2019-07-01,7,0.08195019715502036,7. object · information · detection
+lsa,2019-10-01,7,0.07450088103507278,7. object · information · detection
+lsa,2020-01-01,7,0.07315363255414555,7. object · information · detection
+lsa,2020-04-01,7,0.07156249004827102,7. object · information · detection
+lsa,2020-07-01,7,0.0812762443241986,7. object · information · detection
+lsa,2020-10-01,7,0.08909638338276192,7. object · information · detection
+lsa,2021-01-01,7,0.059753112529190036,7. object · information · detection
+lsa,2021-04-01,7,0.08084500072348617,7. object · information · detection
+lsa,2021-07-01,7,0.08752412997108265,7. object · information · detection
+lsa,2021-10-01,7,0.07915436936300008,7. object · information · detection
+lsa,2022-01-01,7,0.06393727245130615,7. object · information · detection
+lsa,2022-04-01,7,0.07036083309944272,7. object · information · detection
+lsa,2022-07-01,7,0.055494416925025124,7. object · information · detection
+lsa,2022-10-01,7,0.05870545567330146,7. object · information · detection
+lsa,2023-01-01,7,0.0720456507749527,7. object · information · detection
+lsa,2023-04-01,7,0.08288778621777027,7. object · information · detection
+lsa,2023-07-01,7,0.08498502199633996,7. object · information · detection
+lsa,2023-10-01,7,0.058724925040692655,7. object · information · detection
+lsa,2024-01-01,7,0.05377469877904255,7. object · information · detection
+lsa,2024-04-01,7,0.07034825444363066,7. object · information · detection
+lsa,2024-07-01,7,0.07601581581483556,7. object · information · detection
+lsa,2024-10-01,7,0.07630232758112081,7. object · information · detection
+lsa,2025-01-01,7,0.059702195494963,7. object · information · detection
+lsa,2025-04-01,7,0.08102203935585302,7. object · information · detection
+lsa,2025-07-01,7,0.07445608321832786,7. object · information · detection
+lsa,2025-10-01,7,0.0618514589038112,7. object · information · detection
+lsa,2026-01-01,7,0.05339303754744757,7. object · information · detection
+lsa,2026-04-01,7,0.054651426260235565,7. object · information · detection
+lsa,2018-01-01,8,0.04504305874429669,8. privacy · data · train
+lsa,2018-04-01,8,0.05480059584275378,8. privacy · data · train
+lsa,2018-07-01,8,0.0465493426004723,8. privacy · data · train
+lsa,2018-10-01,8,0.04457474465297653,8. privacy · data · train
+lsa,2019-01-01,8,0.04050528732107087,8. privacy · data · train
+lsa,2019-04-01,8,0.05943044991109377,8. privacy · data · train
+lsa,2019-07-01,8,0.04510654709158098,8. privacy · data · train
+lsa,2019-10-01,8,0.056064440501195675,8. privacy · data · train
+lsa,2020-01-01,8,0.041385902575333394,8. privacy · data · train
+lsa,2020-04-01,8,0.06867158155464058,8. privacy · data · train
+lsa,2020-07-01,8,0.050776440020304195,8. privacy · data · train
+lsa,2020-10-01,8,0.05081632021498392,8. privacy · data · train
+lsa,2021-01-01,8,0.06872719931791181,8. privacy · data · train
+lsa,2021-04-01,8,0.0659470826329713,8. privacy · data · train
+lsa,2021-07-01,8,0.04806352649048086,8. privacy · data · train
+lsa,2021-10-01,8,0.06828548975046449,8. privacy · data · train
+lsa,2022-01-01,8,0.061244478175756664,8. privacy · data · train
+lsa,2022-04-01,8,0.04746387759397149,8. privacy · data · train
+lsa,2022-07-01,8,0.0725745724790592,8. privacy · data · train
+lsa,2022-10-01,8,0.06857386282038153,8. privacy · data · train
+lsa,2023-01-01,8,0.05185713719735926,8. privacy · data · train
+lsa,2023-04-01,8,0.07988315118967883,8. privacy · data · train
+lsa,2023-07-01,8,0.06581937879418884,8. privacy · data · train
+lsa,2023-10-01,8,0.04823832085247841,8. privacy · data · train
+lsa,2024-01-01,8,0.06519878049530174,8. privacy · data · train
+lsa,2024-04-01,8,0.06718536011462833,8. privacy · data · train
+lsa,2024-07-01,8,0.04001581976070252,8. privacy · data · train
+lsa,2024-10-01,8,0.07193223543157606,8. privacy · data · train
+lsa,2025-01-01,8,0.05126665553057473,8. privacy · data · train
+lsa,2025-04-01,8,0.050416145213974015,8. privacy · data · train
+lsa,2025-07-01,8,0.05536829622043015,8. privacy · data · train
+lsa,2025-10-01,8,0.053795538228838286,8. privacy · data · train
+lsa,2026-01-01,8,0.04397916025144368,8. privacy · data · train
+lsa,2026-04-01,8,0.05578183119478463,8. privacy · data · train
