@@ -12,7 +12,7 @@
 
 Most topic-modeling projects fit one model and print ten word lists. This one fits three, measures them against each other, matches their topics pairwise, and tracks how the topics move over eight years of arXiv abstracts.
 
-**[Live demo](https://topic-lens.streamlit.app/)** — running on a 2,487-abstract stratified sample, so its metrics are lower than the ones below. The full corpus is 20,169 abstracts across five arXiv categories, January 2018 – June 2026.
+**[Live demo](https://topic-lens.streamlit.app/)** — running on a stratified sample of about 2,500 abstracts that a scheduled workflow extends every month, so its metrics are lower than the ones below. The full corpus is 20,169 abstracts across five arXiv categories, January 2018 – June 2026.
 
 ## What it answers
 
@@ -127,7 +127,8 @@ topic-lens/
 │   │   ├── base.py              # corpus schema and the source protocol
 │   │   ├── corpus.py            # assembly, parquet cache, resumable checkpoints
 │   │   ├── csv_source.py        # bring your own data
-│   │   └── sample.py            # stratified sampling for the demo corpus
+│   │   ├── sample.py            # stratified sampling for the demo corpus
+│   │   └── refresh.py           # which months are missing and how many to fetch
 │   ├── preprocessing.py         # LaTeX-aware cleaning, lemmatization, vectorizers
 │   ├── models/
 │   │   ├── base.py              # the shared TopicModel contract
@@ -148,9 +149,10 @@ topic-lens/
 │   ├── fetch_data.py            # build the corpus
 │   ├── train.py                 # train, evaluate, report
 │   ├── make_demo.py             # the small corpus and bundle that ship with the repo
+│   ├── update_demo.py           # monthly increment for the hosted demo
 │   └── setup_nltk.py            # one-time NLTK data
 ├── streamlit_app.py             # the app
-└── tests/                       # 240+ tests, no network required
+└── tests/                       # 280+ tests, no network required
 ```
 
 Three decisions shape the rest.
@@ -170,6 +172,8 @@ Three decisions shape the rest.
 **The cache invalidates itself.** Its filename contains a hash of everything that shapes the corpus — categories, date range, quotas, filters. Change a parameter and you get a new file, not a silently stale one; a JSON sidecar records what produced it and when.
 
 **Coherence is implemented directly** rather than through gensim: twenty lines of co-occurrence arithmetic, no heavy dependency, and a definition anyone can audit.
+
+**The demo refreshes itself.** A scheduled workflow runs on the third of each month, works out which months are missing from the demo corpus, fetches them at the same density as the existing data, retrains, and commits the result. Fetching only the increment keeps it to ten requests instead of an hour of them. The new bundle is committed only after `tests/test_demo.py` confirms it still loads and can score a text, so a bad run leaves the hosted app on the previous version. Note that GitHub disables scheduled workflows in repositories with no activity for sixty days.
 
 ## Quick start
 
@@ -219,14 +223,14 @@ TOPICLENS_MODELS__N_TOPICS=12 python scripts/train.py
 
 ## Testing
 
-280 tests, none of which touch the network: the arXiv client is exercised against a fake HTTP session that serves canned Atom feeds, including truncated XML, HTML error pages, empty feeds and rate-limit responses.
+280+ tests, none of which touch the network: the arXiv client is exercised against a fake HTTP session that serves canned Atom feeds, including truncated XML, HTML error pages, empty feeds and rate-limit responses.
 
 ```bash
 pytest                      # everything
 pytest -m "not slow"        # skips the tests that fit real models
 ```
 
-CI runs the linter separately from the tests, the tests on Python 3.10, 3.11 and 3.12, and a dependency audit on `main` and weekly — deliberately not on pull requests, so a fresh advisory in a transitive dependency cannot block an unrelated change.
+CI runs the linter separately from the tests, the tests on Python 3.11 and 3.12, and a dependency audit on `main` and weekly — deliberately not on pull requests, so a fresh advisory in a transitive dependency cannot block an unrelated change. A second workflow refreshes the demo corpus monthly and is gated on the demo tests passing.
 
 ## Limitations
 

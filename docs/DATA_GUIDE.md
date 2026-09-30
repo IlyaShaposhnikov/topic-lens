@@ -87,11 +87,11 @@ Neither directory is committed: the corpus is 15 MB and reproducible from the AP
 
 ## The demo corpus
 
-`data/demo/arxiv-demo.csv.gz` (1.1 MB, 2,487 documents) ships with the repository so the hosted app starts without training. It is a stratified sample of the full corpus, drawn proportionally within each (category, year) cell, so the category balance and the full date range survive the shrinking.
+`data/demo/arxiv-demo.csv.gz` (1.1 MB, about 2,500 documents, growing monthly) ships with the repository so the hosted app starts without training. It is a stratified sample of the full corpus, drawn proportionally within each (category, year) cell, so the category balance and the full date range survive the shrinking.
 
 It is deliberately a **CSV**, read by the same `CsvSource` any user's data would go through — the public demo therefore doubles as proof that the pipeline is not arXiv-specific.
 
-Because it holds an eighth of the documents, its metrics are lower than the ones quoted in the README: NMF purity 0.735 against 0.816, LDA 0.540 against 0.706. Fewer documents, less stable topics; this is the expected direction.
+Because it holds an eighth of the documents, its metrics are lower than the ones quoted in the README. Fewer documents, less stable topics; this is the expected direction.
 
 Rebuild it with `python scripts/make_demo.py`.
 
