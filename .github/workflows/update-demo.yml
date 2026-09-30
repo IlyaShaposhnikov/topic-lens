@@ -1,0 +1,76 @@
+name: Refresh demo corpus
+
+# The project reads a live API, so the demo can stay current instead of ageing
+# from the day it was built. Each run adds the months that have passed since the
+# last one, retrains on the result, and commits it — but only if the retrained
+# bundle passes its own tests.
+on:
+  schedule:
+    - cron: "0 5 3 * *"   # the 3rd of each month, once the previous one is closed
+  workflow_dispatch:
+    inputs:
+      until:
+        description: "Last month to fetch (YYYY-MM); default is the last complete one"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-demo
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Cache NLTK corpora
+        uses: actions/cache@v4
+        with:
+          path: ~/nltk_data
+          key: nltk-${{ hashFiles('topiclens/utils/nltk_data.py') }}
+
+      - run: python -m pip install -e ".[dev]"
+      - run: python scripts/setup_nltk.py
+
+      - name: Extend the corpus and retrain
+        id: update
+        # Exit code 2 means "already up to date", which is not a failure.
+        run: |
+          set +e
+          python scripts/update_demo.py ${{ inputs.until && format('--until {0}', inputs.until) || '' }}
+          code=$?
+          set -e
+          if [ "$code" = "2" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          exit $code
+
+      - name: Verify the regenerated demo still works
+        if: steps.update.outputs.changed != 'false'
+        # The guard that matters: a bundle that cannot be loaded would take the
+        # hosted app down until someone noticed.
+        run: pytest tests/test_demo.py -v
+
+      - name: Commit the refreshed demo
+        if: steps.update.outputs.changed != 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/demo artifacts/demo
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(demo): refresh the corpus and retrain [skip ci]"
+          git push

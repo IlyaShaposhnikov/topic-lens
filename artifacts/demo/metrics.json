@@ -184,57 +184,58 @@
     }
   },
   "corpus_fingerprint": {
-    "size": 2487,
-    "source": "demo"
+    "size": 2537,
+    "source": "demo",
+    "updated_through": "2026-08"
   },
-  "created_at": "2026-09-29T10:13:46+00:00",
+  "created_at": "2026-09-30T12:52:06+00:00",
   "cross_model_similarity": {
-    "lda-lsa": 0.3627,
-    "lda-nmf": 0.588,
-    "lsa-nmf": 0.4084
+    "lda-lsa": 0.3274,
+    "lda-nmf": 0.5893,
+    "lsa-nmf": 0.3567
   },
-  "documents": 2487,
-  "holdout_size": 373,
+  "documents": 2537,
+  "holdout_size": 381,
   "metrics": {
     "lda": {
-      "ari": 0.2391628314004398,
+      "ari": 0.384902304575684,
       "converged": 0.0,
-      "diversity": 0.8375,
-      "fit_seconds": 28.1,
-      "holdout_perplexity": 5374.934436725438,
-      "most_similar_pair": 0.17647058823529413,
+      "diversity": 0.825,
+      "fit_seconds": 25.6,
+      "holdout_perplexity": 5227.014048175431,
+      "most_similar_pair": 0.1111111111111111,
       "n_iter": 50.0,
-      "nmi": 0.31751521024057233,
-      "npmi": 0.1241367270007618,
-      "pairwise_overlap": 0.03954739790653102,
-      "purity": 0.5402081362346263,
-      "umass": -1.8534810451872974
+      "nmi": 0.4287407475663848,
+      "npmi": 0.11123929212841063,
+      "pairwise_overlap": 0.030910609857978277,
+      "purity": 0.724025974025974,
+      "umass": -1.898247910723456
     },
     "lsa": {
-      "ari": 0.005254709118858724,
-      "diversity": 0.675,
-      "explained_variance_ratio": 0.03812938765616791,
+      "ari": 0.003616253766668495,
+      "diversity": 0.6375,
+      "explained_variance_ratio": 0.037664167339985816,
       "fit_seconds": 0.1,
       "most_similar_pair": 0.25,
-      "nmi": 0.10339469625670021,
-      "npmi": 0.10395677979823953,
-      "pairwise_overlap": 0.07214420856061723,
-      "purity": 0.2696310312204352,
-      "umass": -1.9967132077455634
+      "nmi": 0.09184985108359829,
+      "npmi": 0.11192310974400607,
+      "pairwise_overlap": 0.08654602191753895,
+      "purity": 0.25834879406307976,
+      "umass": -1.9564287907877096
     },
     "nmf": {
-      "ari": 0.39760450213952775,
-      "diversity": 0.9,
+      "ari": 0.45019636897818804,
+      "diversity": 0.8625,
       "fit_seconds": 6.2,
       "most_similar_pair": 0.1111111111111111,
-      "n_iter": 130.0,
-      "nmi": 0.4492594197622389,
-      "npmi": 0.1924836243086669,
-      "pairwise_overlap": 0.01733500417710944,
-      "purity": 0.7350993377483444,
-      "reconstruction_error": 325.46753323988935,
-      "umass": -1.7354433300296885
+      "n_iter": 140.0,
+      "nmi": 0.4771279877214467,
+      "npmi": 0.17757670484087962,
+      "pairwise_overlap": 0.025062656641604,
+      "purity": 0.7467532467532467,
+      "reconstruction_error": 329.26827620510045,
+      "umass": -1.8389706239440022
     }
   },
-  "train_size": 2114
+  "train_size": 2156
 }

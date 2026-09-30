@@ -1,9 +1,10 @@
 {
   "corpus_fingerprint": {
-    "size": 2487,
-    "source": "demo"
+    "size": 2537,
+    "source": "demo",
+    "updated_through": "2026-08"
   },
-  "created_at": "2026-09-29T10:13:46+00:00",
+  "created_at": "2026-09-30T12:52:06+00:00",
   "models": [
     "lda",
     "lsa",
@@ -16,7 +17,7 @@
   },
   "version": 1,
   "vocabulary_size": {
-    "count": 5264,
-    "tfidf": 5264
+    "count": 5333,
+    "tfidf": 5333
   }
 }

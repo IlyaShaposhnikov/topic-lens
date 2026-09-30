@@ -1,25 +1,25 @@
 pair,topic_a,label_a,topic_b,label_b,similarity,shared_words
-lda-lsa,8,8. graph · feature · representation,1,1. data · learn · system,0.6973,"algorithm, data, learn"
-lda-lsa,6,6. data · query · database,3,3. query · data · database,0.5326,"data, database, query, system"
-lda-lsa,4,4. robot · learn · control,2,2. robot · environment · control,0.5325,"control, environment, plan, robot, trajectory"
-lda-lsa,7,7. attack · detection · image,4,4. attack · network · security,0.4501,"adversarial, attack, detection, image, network"
-lda-lsa,3,3. language · llm · language model,5,5. attack · llm · security,0.2532,"language, language model, large language, llm"
-lda-lsa,1,1. learn · train · data,8,8. privacy · data · train,0.1794,"data, image, learn, train"
-lda-lsa,5,5. data · system · privacy,7,7. object · information · detection,0.179,
-lda-lsa,2,2. network · image · segmentation,6,6. llm · large language · image,0.0775,"image, object"
-lda-nmf,4,4. robot · learn · control,2,2. robot · environment · control,0.8491,"control, environment, plan, robot, trajectory"
-lda-nmf,5,5. data · system · privacy,3,3. data · privacy · protocol,0.6843,"application, data, privacy, security, system"
-lda-nmf,8,8. graph · feature · representation,8,8. graph · query · data,0.6667,"data, graph, knowledge, semantic"
-lda-nmf,3,3. language · llm · language model,6,6. language · text · word,0.6518,"language, natural, natural language, text, word"
-lda-nmf,1,1. learn · train · data,4,4. network · deep · image,0.5799,"deep, image, learn"
-lda-nmf,6,6. data · query · database,7,7. query · algorithm · search,0.4693,"index, query, time"
-lda-nmf,7,7. attack · detection · image,5,5. llm · attack · large language,0.4261,attack
-lda-nmf,2,2. network · image · segmentation,1,1. image · visual · scene,0.3764,"image, object"
-lsa-nmf,2,2. robot · environment · control,2,2. robot · environment · control,0.6299,"autonomous, control, environment, motion, plan, robot, trajectory, vehicle"
-lsa-nmf,1,1. data · learn · system,6,6. language · text · word,0.5973,"language, train"
-lsa-nmf,5,5. attack · llm · security,5,5. llm · attack · large language,0.5552,"attack, language, language model, large language, llm, security, system, threat, vulnerability"
-lsa-nmf,3,3. query · data · database,3,3. data · privacy · protocol,0.5119,"data, privacy, protocol, security, system"
-lsa-nmf,4,4. attack · network · security,4,4. network · deep · image,0.4757,"deep, detection, feature, image, network, neural network"
-lsa-nmf,6,6. llm · large language · image,1,1. image · visual · scene,0.2809,"image, object"
-lsa-nmf,7,7. object · information · detection,8,8. graph · query · data,0.1111,semantic
-lsa-nmf,8,8. privacy · data · train,7,7. query · algorithm · search,0.1049,
+lda-lsa,7,7. data · query · database,1,1. data · learn · system,0.5749,"algorithm, data, language, process, system"
+lda-lsa,5,5. data · security · attack,3,3. query · data · security,0.4806,"attack, data, privacy, protocol, security, system"
+lda-lsa,1,1. learn · robot · motion,2,2. robot · control · environment,0.4709,"control, dynamic, motion, plan, robot, trajectory"
+lda-lsa,8,8. learn · image · network,4,4. attack · network · security,0.385,"deep, detection, feature, image, network"
+lda-lsa,2,2. language · attack · llm,5,5. attack · security · llm,0.3472,"attack, language, language model, llm"
+lda-lsa,6,6. video · estimation · pose,6,6. llm · large language · image,0.2016,object
+lda-lsa,3,3. system · robot · environment,7,7. information · object · visual,0.146,
+lda-lsa,4,4. problem · mine · scene,8,8. privacy · data · learn,0.0132,
+lda-nmf,8,8. learn · image · network,4,4. image · network · feature,0.8421,"deep, detection, feature, image, learn, network, train"
+lda-nmf,5,5. data · security · attack,3,3. security · privacy · data,0.8397,"application, attack, data, privacy, protocol, security, system"
+lda-nmf,3,3. system · robot · environment,2,2. robot · environment · control,0.8071,"autonomous, control, environment, robot, vehicle"
+lda-nmf,7,7. data · query · database,5,5. query · data · database,0.7959,"algorithm, data, database, problem, process, query, search"
+lda-nmf,2,2. language · attack · llm,6,6. language · text · word,0.6862,"language, text, train"
+lda-nmf,1,1. learn · robot · motion,7,7. learn · adversarial · train,0.3231,learn
+lda-nmf,6,6. video · estimation · pose,1,1. llm · language model · language,0.306,
+lda-nmf,4,4. problem · mine · scene,8,8. detection · graph · attack,0.1145,knowledge
+lsa-nmf,1,1. data · learn · system,7,7. learn · adversarial · train,0.6196,"learn, train"
+lsa-nmf,2,2. robot · control · environment,2,2. robot · environment · control,0.6193,"autonomous, control, dynamic, environment, motion, plan, robot, trajectory, vehicle"
+lsa-nmf,3,3. query · data · security,5,5. query · data · database,0.4267,"data, database, query"
+lsa-nmf,4,4. attack · network · security,4,4. image · network · feature,0.3692,"deep, detection, feature, image, network"
+lsa-nmf,6,6. llm · large language · image,1,1. llm · language model · language,0.3664,"language model, large, large language, llm, reason, visual"
+lsa-nmf,8,8. privacy · data · learn,3,3. security · privacy · data,0.2037,"data, privacy, user"
+lsa-nmf,5,5. attack · security · llm,8,8. detection · graph · attack,0.1385,"attack, system"
+lsa-nmf,7,7. information · object · visual,6,6. language · text · word,0.11,

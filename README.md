@@ -219,7 +219,7 @@ TOPICLENS_MODELS__N_TOPICS=12 python scripts/train.py
 
 ## Testing
 
-260+ tests, none of which touch the network: the arXiv client is exercised against a fake HTTP session that serves canned Atom feeds, including truncated XML, HTML error pages, empty feeds and rate-limit responses.
+280 tests, none of which touch the network: the arXiv client is exercised against a fake HTTP session that serves canned Atom feeds, including truncated XML, HTML error pages, empty feeds and rate-limit responses.
 
 ```bash
 pytest                      # everything
