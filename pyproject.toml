@@ -7,12 +7,11 @@ name = "topic-lens"
 version = "0.1.0"
 description = "Comparative topic modeling toolkit: LDA, NMF and LSA side by side on a single corpus"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Ilya Shaposhnikov", email = "ilia.a.shaposhnikov@gmail.com" }]
 keywords = ["nlp", "topic-modeling", "lda", "nmf", "lsa", "arxiv", "streamlit"]
 classifiers = [
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
@@ -57,7 +56,7 @@ include = ["topiclens*"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RET"]

@@ -2,10 +2,11 @@
 
 # TopicLens
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![CI](https://github.com/IlyaShaposhnikov/topic-lens/actions/workflows/ci.yml/badge.svg)](https://github.com/IlyaShaposhnikov/topic-lens/actions)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit-FF4B4B?logo=streamlit)](https://topic-lens.streamlit.app/)
 
 **LDA, NMF и LSA обучаются на одном корпусе и сравниваются по когерентности, разнообразию тем и согласию с реальными категориями — а не по тому, насколько правдоподобно выглядят их топ-слова.**
 
@@ -81,6 +82,25 @@ LDA и NMF независимо нашли одну и ту же тему ком
 Каждый параметр ниже выбран измерением, и сами измерения не менее интересны, чем выбор.
 
 **Число тем для LDA — в основном шум.** Перебор k от 5 до 20 изменил когерентность LDA на 0,022, тогда как смена только случайного зерна меняет ее на 0,023. Выбирать k по такой кривой означало бы гадать. С NMF наоборот: при инициализации `nndsvda` (которая сама является SVD матрицы) он полностью детерминирован по зернам, поэтому его различия реальны, а максимум приходится на k = 5–8. Для всех трех моделей взято восемь тем, чтобы сравнение оставалось сопоставимым.
+
+![Выбор числа тем](docs/images/sweep.png)
+
+### Пять тем или восемь?
+
+Метрики не согласуются между собой, и в этом-то и суть. При k = 5 NMF гораздо лучше соответствует категориям arXiv — чистота 0,844 против 0,816, ARI 0,657 против 0,524, что неудивительно, поскольку для сопоставления имеется ровно пять категорий. При k = 8 когерентность немного выше (0,196 против 0,192), а темы становятся более детальными: единая языковая тема разделяется на большие языковые модели и классическую обработку естественного языка (NLP).
+
+| # | k = 5 | k = 8 |
+|---|---|---|
+| 1 | language, language model, llm, text, large language, large, word, train, generation, natural | llm, language, language model, large language, reason, large, model llm, prompt, generation, human |
+| 2 | robot, environment, control, motion, plan, trajectory, autonomous, vehicle, system, robotic | robot, environment, control, plan, autonomous, motion, trajectory, vehicle, robotic, system |
+| 3 | attack, security, system, privacy, data, user, protocol, secure, analysis, application | security, attack, system, privacy, data, protocol, secure, user, device, blockchain |
+| 4 | image, network, learn, feature, train, deep, detection, neural, neural network, segmentation | detection, network, image, deep, feature, neural network, classification, neural, deep learn, learn|
+| 5 | query, data, graph, database, algorithm, search, problem, time, index, process | query, data, graph, database, algorithm, index, search, process, time, problem |
+| 6 |  | language, text, word, translation, corpus, sentence, natural language, speech, natural, train |
+| 7 |  | attack, adversarial, learn, train, parameter, sample, inference, algorithm, function, problem |
+| 8 |  | image, learn, train, video, visual, representation, data, object, scene, label |
+
+Гранулярность остается на усмотрение аналитика; метрики лишь обозначают диапазон, в котором этот выбор обоснован.
 
 **Больший словарь ухудшил результат.** Полный словарь униграмм и биграмм содержит 55 986 признаков, из них 44 860 — биграммы. Ограничение в 20 000, оставляющее униграммы и самые частотные биграммы, подняло когерентность NMF с 0,193 до 0,217, разнообразие с 0,850 до 0,887, чистоту с 0,807 до 0,831. Длинный хвост редких биграмм — шум, и лимит здесь осознанный фильтр, а не случайность.
 
@@ -199,7 +219,7 @@ TOPICLENS_MODELS__N_TOPICS=12 python scripts/train.py
 
 ## Тестирование
 
-Более 240 тестов, ни один не ходит в сеть: клиент arXiv проверяется на фейковой HTTP-сессии, отдающей заготовленные Atom-фиды, включая обрезанный XML, HTML-страницы ошибок, пустые фиды и ответы с лимитом частоты.
+Более 260 тестов, ни один не ходит в сеть: клиент arXiv проверяется на фейковой HTTP-сессии, отдающей заготовленные Atom-фиды, включая обрезанный XML, HTML-страницы ошибок, пустые фиды и ответы с лимитом частоты.
 
 ```bash
 pytest                      # все

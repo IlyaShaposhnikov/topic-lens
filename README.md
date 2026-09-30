@@ -2,10 +2,11 @@
 
 # TopicLens
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![CI](https://github.com/IlyaShaposhnikov/topic-lens/actions/workflows/ci.yml/badge.svg)](https://github.com/IlyaShaposhnikov/topic-lens/actions)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit-FF4B4B?logo=streamlit)](https://topic-lens.streamlit.app/)
 
 **LDA, NMF and LSA fitted on the same corpus and compared on coherence, topic diversity and agreement with real category labels — not on how plausible their top words look.**
 
@@ -81,6 +82,25 @@ The curve matches what the model found without being told anything about LLMs.
 Every parameter below was chosen by measurement, and the measurements are as interesting as the choices.
 
 **The number of topics is mostly noise for LDA.** Sweeping k from 5 to 20 moved LDA's coherence by 0.022 — while changing only the random seed moved it by 0.023. Picking k from that curve would have been reading tea leaves. NMF is the opposite: with `nndsvda` initialization (itself an SVD of the matrix) it is fully deterministic across seeds, so its differences are real, and it peaks at k = 5–8. Eight topics are used for all three models, so that the comparison stays like-for-like.
+
+![Choosing the number of topics](docs/images/sweep.png)
+
+### Five topics or eight?
+
+The metrics do not agree, and that disagreement is the point. At k = 5 NMF matches the arXiv categories far better — purity 0.844 against 0.816, ARI 0.657 against 0.524 — which is unsurprising when there are exactly five categories to match. At k = 8 coherence is slightly higher (0.196 against 0.192) and the topics are finer: the single language topic splits into large language models and classical NLP.
+
+| # | k = 5 | k = 8 |
+|---|---|---|
+| 1 | language, language model, llm, text, large language, large, word, train, generation, natural | llm, language, language model, large language, reason, large, model llm, prompt, generation, human |
+| 2 | robot, environment, control, motion, plan, trajectory, autonomous, vehicle, system, robotic | robot, environment, control, plan, autonomous, motion, trajectory, vehicle, robotic, system |
+| 3 | attack, security, system, privacy, data, user, protocol, secure, analysis, application | security, attack, system, privacy, data, protocol, secure, user, device, blockchain |
+| 4 | image, network, learn, feature, train, deep, detection, neural, neural network, segmentation | detection, network, image, deep, feature, neural network, classification, neural, deep learn, learn|
+| 5 | query, data, graph, database, algorithm, search, problem, time, index, process | query, data, graph, database, algorithm, index, search, process, time, problem |
+| 6 |  | language, text, word, translation, corpus, sentence, natural language, speech, natural, train |
+| 7 |  | attack, adversarial, learn, train, parameter, sample, inference, algorithm, function, problem |
+| 8 |  | image, learn, train, video, visual, representation, data, object, scene, label |
+
+Granularity is the analyst's choice; the metrics only mark the range where the choice is defensible.
 
 **A bigger vocabulary made things worse.** The full 1–2-gram vocabulary holds 55,986 features, of which 44,860 are bigrams. Capping it at 20,000 — which keeps the unigrams and the most frequent bigrams — improved NMF's coherence from 0.193 to 0.217, diversity from 0.850 to 0.887 and purity from 0.807 to 0.831. The long tail of rare bigrams is noise, and the cap is a deliberate filter rather than an accident.
 
@@ -199,7 +219,7 @@ TOPICLENS_MODELS__N_TOPICS=12 python scripts/train.py
 
 ## Testing
 
-240+ tests, none of which touch the network: the arXiv client is exercised against a fake HTTP session that serves canned Atom feeds, including truncated XML, HTML error pages, empty feeds and rate-limit responses.
+260+ tests, none of which touch the network: the arXiv client is exercised against a fake HTTP session that serves canned Atom feeds, including truncated XML, HTML error pages, empty feeds and rate-limit responses.
 
 ```bash
 pytest                      # everything
