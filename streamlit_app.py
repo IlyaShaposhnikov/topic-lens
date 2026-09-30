@@ -22,6 +22,7 @@ from topiclens.artifacts import BUNDLE_FILENAME, ArtifactError
 from topiclens.config import load_config
 from topiclens.constants import PROJECT_ROOT, resolve_path
 from topiclens.ui.data import ReportData, document_vectors, load_bundle, load_reports
+from topiclens.ui.upload import render_upload_tab
 from topiclens.ui.views import (
     render_comparison_tab,
     render_text_tab,
@@ -116,8 +117,8 @@ def main() -> None:
         if corpus is None:
             st.caption("No corpus file found — similarity search is unavailable.")
 
-    topics, comparison, timeline, text = st.tabs(
-        ["Topics", "Comparison", "Over time", "Analyze a text"]
+    topics, comparison, timeline, text, upload = st.tabs(
+        ["Topics", "Comparison", "Over time", "Analyze a text", "Your own data"]
     )
     with topics:
         render_topics_tab(bundle, reports)
@@ -128,6 +129,8 @@ def main() -> None:
     with text:
         vectors = get_corpus_vectors(directory, prefer_demo) if corpus is not None else None
         render_text_tab(bundle, corpus, vectors)
+    with upload:
+        render_upload_tab(load_config())
 
 
 if __name__ == "__main__":

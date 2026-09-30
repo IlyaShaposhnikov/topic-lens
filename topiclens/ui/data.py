@@ -18,7 +18,7 @@ import pandas as pd
 
 from topiclens.artifacts import ArtifactError, ModelBundle
 from topiclens.constants import resolve_path
-from topiclens.data.base import finalize_corpus
+from topiclens.data.base import CorpusError, finalize_corpus
 from topiclens.utils.logging_config import get_logger
 
 logger = get_logger(__name__)
@@ -108,8 +108,20 @@ def corpus_from_csv(
         CorpusError: if the chosen text column is absent or nothing survives.
     """
     raw = pd.read_csv(source)
+    requested = {
+        "text": text_column,
+        "label": label_column,
+        "date": date_column,
+        "doc_id": id_column,
+    }
+    for target, column in requested.items():
+        if column and column not in raw.columns:
+            raise CorpusError(
+                f"column {column!r} (mapped to {target!r}) is not in the file; "
+                f"available columns: {', '.join(map(str, raw.columns))}"
+            )
     frame = pd.DataFrame(index=raw.index)
-    frame["text"] = raw[text_column] if text_column in raw.columns else None
+    frame["text"] = raw[text_column]
     frame["title"] = None
     frame["label"] = raw[label_column] if label_column else None
     frame["date"] = raw[date_column] if date_column else None
