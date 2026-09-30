@@ -24,6 +24,7 @@ from topiclens.ui.data import load_reports
 from topiclens.viz.charts import (
     metrics_comparison_chart,
     similarity_heatmap,
+    sweep_chart,
     timeline_chart,
     topic_words_chart,
 )
@@ -72,6 +73,12 @@ def main(argv: list[str] | None = None) -> int:
         figures["timeline-nmf"] = timeline_chart(reports.timeline, "nmf")
 
     figures["metrics"] = metrics_comparison_chart(reports.metrics)
+    if reports.sweep is not None and not reports.sweep.empty:
+        rows = [
+            type("Row", (), {"as_record": lambda self, r=record: r})()
+            for record in reports.sweep.to_dict("records")
+        ]
+        figures["sweep"] = sweep_chart(rows)
     figures["similarity-lda-nmf"] = similarity_heatmap(bundle.models["lda"], bundle.models["nmf"])
 
     matches = sorted(glob.glob(str(PROJECT_ROOT / "data" / "cache" / "arxiv-*.parquet")))

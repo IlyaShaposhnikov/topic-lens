@@ -9,7 +9,7 @@ for charts, long-format tables because that is what plotting libraries want.
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -94,7 +94,7 @@ def write_report(
     written: dict[str, Path] = {}
 
     summary = {
-        "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "documents": int(len(frame)),
         "train_size": run.train_size,
         "holdout_size": run.holdout_size,

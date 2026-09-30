@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -215,7 +215,7 @@ def load_corpus(
             "fingerprint": source.fingerprint(),
             "min_abstract_chars": config.data.min_abstract_chars,
             "drop_duplicates": config.data.drop_duplicates,
-            "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
             "summary": corpus_summary(frame),
         }
         metadata_path.write_text(
