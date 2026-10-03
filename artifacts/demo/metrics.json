@@ -23,7 +23,7 @@
         "primary_category_only": true,
         "slice_by": "month"
       },
-      "cache_dir": "data\\cache",
+      "cache_dir": "data/cache",
       "csv": {
         "date_column": null,
         "id_column": null,
@@ -33,7 +33,7 @@
       },
       "drop_duplicates": true,
       "min_abstract_chars": 250,
-      "raw_dir": "data\\raw",
+      "raw_dir": "data/raw",
       "source": "arxiv"
     },
     "evaluation": {
@@ -55,7 +55,7 @@
     },
     "logging": {
       "console_level": "WARNING",
-      "file": "logs\\topiclens.log",
+      "file": "logs/topiclens.log",
       "level": "INFO"
     },
     "models": {
@@ -184,58 +184,58 @@
     }
   },
   "corpus_fingerprint": {
-    "size": 2537,
+    "size": 2562,
     "source": "demo",
-    "updated_through": "2026-08"
+    "updated_through": "2026-09"
   },
-  "created_at": "2026-09-30T12:52:06+00:00",
+  "created_at": "2026-10-03T10:19:15+00:00",
   "cross_model_similarity": {
-    "lda-lsa": 0.3274,
-    "lda-nmf": 0.5893,
-    "lsa-nmf": 0.3567
+    "lda-lsa": 0.3105,
+    "lda-nmf": 0.6431,
+    "lsa-nmf": 0.4142
   },
-  "documents": 2537,
-  "holdout_size": 381,
+  "documents": 2562,
+  "holdout_size": 384,
   "metrics": {
     "lda": {
-      "ari": 0.384902304575684,
+      "ari": 0.2514149022085606,
       "converged": 0.0,
-      "diversity": 0.825,
-      "fit_seconds": 25.6,
-      "holdout_perplexity": 5227.014048175431,
+      "diversity": 0.8375,
+      "fit_seconds": 23.2,
+      "holdout_perplexity": 4944.589713690105,
       "most_similar_pair": 0.1111111111111111,
       "n_iter": 50.0,
-      "nmi": 0.4287407475663848,
-      "npmi": 0.11123929212841063,
-      "pairwise_overlap": 0.030910609857978277,
-      "purity": 0.724025974025974,
-      "umass": -1.898247910723456
+      "nmi": 0.356206081444654,
+      "npmi": 0.12371904401799907,
+      "pairwise_overlap": 0.026942355889724306,
+      "purity": 0.6115702479338843,
+      "umass": -1.8140502855133163
     },
     "lsa": {
-      "ari": 0.003616253766668495,
-      "diversity": 0.6375,
-      "explained_variance_ratio": 0.037664167339985816,
+      "ari": 0.004916352012178298,
+      "diversity": 0.6125,
+      "explained_variance_ratio": 0.037827415679529505,
       "fit_seconds": 0.1,
       "most_similar_pair": 0.25,
-      "nmi": 0.09184985108359829,
-      "npmi": 0.11192310974400607,
-      "pairwise_overlap": 0.08654602191753895,
-      "purity": 0.25834879406307976,
-      "umass": -1.9564287907877096
+      "nmi": 0.09973200580509017,
+      "npmi": 0.11860063830552853,
+      "pairwise_overlap": 0.0976000049142464,
+      "purity": 0.26721763085399447,
+      "umass": -1.8593212993326165
     },
     "nmf": {
-      "ari": 0.45019636897818804,
+      "ari": 0.4735616229676481,
       "diversity": 0.8625,
-      "fit_seconds": 6.2,
+      "fit_seconds": 2.5,
       "most_similar_pair": 0.1111111111111111,
-      "n_iter": 140.0,
-      "nmi": 0.4771279877214467,
-      "npmi": 0.17757670484087962,
-      "pairwise_overlap": 0.025062656641604,
-      "purity": 0.7467532467532467,
-      "reconstruction_error": 329.26827620510045,
-      "umass": -1.8389706239440022
+      "n_iter": 100.0,
+      "nmi": 0.49593603532725833,
+      "npmi": 0.21759808488938126,
+      "pairwise_overlap": 0.026942355889724306,
+      "purity": 0.7731864095500459,
+      "reconstruction_error": 330.9496046331376,
+      "umass": -1.7321824347763335
     }
   },
-  "train_size": 2156
+  "train_size": 2178
 }
